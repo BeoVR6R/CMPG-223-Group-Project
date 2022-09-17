@@ -16,6 +16,10 @@ namespace GrindGo
         {
             InitializeComponent();
         }
- 
+
+        private void lbl_Welcome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
