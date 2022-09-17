@@ -6,7 +6,10 @@
 
  ## To-Do list
 1. Create class diagram - DONE
-2. Create logical data model
-3. Convert logical to physical data model
+2. Create logical data model - DONE
+3. Convert logical to physical data model - DONE
 4. Create logical process model - DONE
 5. Convert logical to physical - DONE
+6. Create databse from physical data model - DONE
+7. Construct document to be submitted at the 18TH of Spetember
+8. Create windows forms app

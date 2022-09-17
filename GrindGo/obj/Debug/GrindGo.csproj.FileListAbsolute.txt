@@ -10,3 +10,5 @@ C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\Gri
 C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.csproj.CoreCompileInputs.cache
 C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.exe
 C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.pdb
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.AdminLogin.resources
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.AdminPanel.resources
