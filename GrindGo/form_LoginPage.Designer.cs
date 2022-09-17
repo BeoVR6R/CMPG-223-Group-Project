@@ -1,6 +1,6 @@
 ﻿namespace GrindGo
 {
-    partial class form_Homepage
+    partial class form_LoginPage
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // form_Homepage
+            // form_LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "form_Homepage";
-            this.Text = "GrindGo - Homepage";
+            this.Name = "form_LoginPage";
+            this.Text = "GrindGo -  Login Page";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -44,3 +46,4 @@
         #endregion
     }
 }
+

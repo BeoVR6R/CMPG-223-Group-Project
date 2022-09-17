@@ -16,7 +16,7 @@ namespace GrindGo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_Homepage());
+            Application.Run(new form_LoginPage());
         }
     }
 }

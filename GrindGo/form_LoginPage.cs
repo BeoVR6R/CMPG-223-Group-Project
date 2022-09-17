@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace GrindGo
 {
-    public partial class form_Homepage : Form
+    public partial class form_LoginPage : Form
     {
-        public form_Homepage()
+        public form_LoginPage()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
