@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "form_Homepage";
             this.Text = "GrindGo - Homepage";
+            this.Load += new System.EventHandler(this.form_Homepage_Load);
             this.ResumeLayout(false);
 
         }

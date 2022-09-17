@@ -16,5 +16,10 @@ namespace GrindGo
         {
             InitializeComponent();
         }
+
+        private void form_Homepage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
