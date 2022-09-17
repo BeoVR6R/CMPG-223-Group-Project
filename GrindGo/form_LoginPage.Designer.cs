@@ -89,6 +89,7 @@
             this.btn_Clear.TabIndex = 5;
             this.btn_Clear.Text = "CLEAR";
             this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // btn_Login
             // 
@@ -107,6 +108,7 @@
             this.btn_DevLogin.TabIndex = 7;
             this.btn_DevLogin.Text = "DEV LOGIN";
             this.btn_DevLogin.UseVisualStyleBackColor = true;
+            this.btn_DevLogin.Click += new System.EventHandler(this.btn_DevLogin_Click);
             // 
             // form_LoginPage
             // 

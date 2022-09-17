@@ -1,0 +1,12 @@
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\bin\Debug\GrindGo.exe.config
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\bin\Debug\GrindGo.exe
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\bin\Debug\GrindGo.pdb
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.csproj.AssemblyReference.cache
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.csproj.SuggestedBindingRedirects.cache
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.form_Homepage.resources
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.form_LoginPage.resources
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.Properties.Resources.resources
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.csproj.GenerateResource.cache
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.csproj.CoreCompileInputs.cache
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.exe
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.pdb

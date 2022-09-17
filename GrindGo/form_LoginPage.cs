@@ -21,5 +21,18 @@ namespace GrindGo
         {
 
         }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            txtBx_Email.Clear();
+            txtBx_Password.Clear();
+        }
+
+        private void btn_DevLogin_Click(object sender, EventArgs e)
+        {
+            form_Homepage formHome = new form_Homepage();
+            formHome.Show();
+            this.Hide();
+        }
     }
 }

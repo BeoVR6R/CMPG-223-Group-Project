@@ -28,7 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btn_Login = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btn_Login
+            // 
+            this.btn_Login.Location = new System.Drawing.Point(12, 415);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(145, 23);
+            this.btn_Login.TabIndex = 0;
+            this.btn_Login.Text = "LOGIN PAGE";
+            this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.button1_Click);
             // 
             // form_Homepage
             // 
@@ -36,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Login);
             this.Name = "form_Homepage";
             this.Text = "GrindGo - Homepage";
             this.Load += new System.EventHandler(this.form_Homepage_Load);
@@ -44,5 +56,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btn_Login;
     }
 }

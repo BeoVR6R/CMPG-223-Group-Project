@@ -21,5 +21,12 @@ namespace GrindGo
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            form_LoginPage formLogin = new form_LoginPage();
+            this.Hide();
+            formLogin.Show();
+        }
     }
 }
