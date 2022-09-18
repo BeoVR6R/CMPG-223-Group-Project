@@ -76,7 +76,7 @@ namespace GrindGo
             int price = 0;  
             double houseBlend_Price = 9.99;
             counterHouseBlend = 0;
-
+            
             for (int i = 0; i < rTB_Order.Lines.Length; i++)
             {
                 if (rTB_Order.Lines[i] == "HouseBlend")

@@ -34,5 +34,10 @@ namespace GrindGo
             formHome.Show();
             this.Hide();
         }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
