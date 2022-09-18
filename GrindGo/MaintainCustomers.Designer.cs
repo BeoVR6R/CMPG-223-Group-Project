@@ -30,26 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbl_SearchCustomer = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txBx_searchCustomer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Search = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.grindGoDataSet = new GrindGo.GrindGoDataSet();
-            this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cUSTOMERTableAdapter = new GrindGo.GrindGoDataSetTableAdapters.CUSTOMERTableAdapter();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.residentialAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loyaltyQtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.grindGoDataSet = new GrindGo.GrindGoDataSet();
+            this.cUSTOMERTableAdapter = new GrindGo.GrindGoDataSetTableAdapters.CUSTOMERTableAdapter();
             this.btn_deleteCustomer = new System.Windows.Forms.Button();
             this.btn_updateCustomer = new System.Windows.Forms.Button();
             this.btn_goBack = new System.Windows.Forms.Button();
             this.btn_createCustomer = new System.Windows.Forms.Button();
             this.btn_advancedSearch = new System.Windows.Forms.Button();
+            this.btn_refreshTable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_SearchCustomer
@@ -61,12 +62,12 @@
             this.lbl_SearchCustomer.TabIndex = 0;
             this.lbl_SearchCustomer.Text = "Edit an existing Customer:";
             // 
-            // textBox1
+            // txBx_searchCustomer
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 20);
-            this.textBox1.TabIndex = 1;
+            this.txBx_searchCustomer.Location = new System.Drawing.Point(101, 34);
+            this.txBx_searchCustomer.Name = "txBx_searchCustomer";
+            this.txBx_searchCustomer.Size = new System.Drawing.Size(149, 20);
+            this.txBx_searchCustomer.TabIndex = 1;
             // 
             // label1
             // 
@@ -85,6 +86,7 @@
             this.btn_Search.TabIndex = 3;
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // dataGridView1
             // 
@@ -101,20 +103,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 218);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // grindGoDataSet
-            // 
-            this.grindGoDataSet.DataSetName = "GrindGoDataSet";
-            this.grindGoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cUSTOMERBindingSource
-            // 
-            this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
-            this.cUSTOMERBindingSource.DataSource = this.grindGoDataSet;
-            // 
-            // cUSTOMERTableAdapter
-            // 
-            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -146,6 +134,20 @@
             this.loyaltyQtyDataGridViewTextBoxColumn.HeaderText = "loyaltyQty";
             this.loyaltyQtyDataGridViewTextBoxColumn.Name = "loyaltyQtyDataGridViewTextBoxColumn";
             // 
+            // cUSTOMERBindingSource
+            // 
+            this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
+            this.cUSTOMERBindingSource.DataSource = this.grindGoDataSet;
+            // 
+            // grindGoDataSet
+            // 
+            this.grindGoDataSet.DataSetName = "GrindGoDataSet";
+            this.grindGoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cUSTOMERTableAdapter
+            // 
+            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
+            // 
             // btn_deleteCustomer
             // 
             this.btn_deleteCustomer.Location = new System.Drawing.Point(15, 287);
@@ -154,6 +156,7 @@
             this.btn_deleteCustomer.TabIndex = 5;
             this.btn_deleteCustomer.Text = "DELETE SELECTED";
             this.btn_deleteCustomer.UseVisualStyleBackColor = true;
+            this.btn_deleteCustomer.Click += new System.EventHandler(this.btn_deleteCustomer_Click);
             // 
             // btn_updateCustomer
             // 
@@ -193,12 +196,23 @@
             this.btn_advancedSearch.Text = "ADVANCED SEARCH";
             this.btn_advancedSearch.UseVisualStyleBackColor = true;
             // 
+            // btn_refreshTable
+            // 
+            this.btn_refreshTable.Location = new System.Drawing.Point(605, 63);
+            this.btn_refreshTable.Name = "btn_refreshTable";
+            this.btn_refreshTable.Size = new System.Drawing.Size(192, 54);
+            this.btn_refreshTable.TabIndex = 10;
+            this.btn_refreshTable.Text = "REFRESH TABLE";
+            this.btn_refreshTable.UseVisualStyleBackColor = true;
+            this.btn_refreshTable.Click += new System.EventHandler(this.btn_refreshTable_Click);
+            // 
             // MaintainCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_refreshTable);
             this.Controls.Add(this.btn_advancedSearch);
             this.Controls.Add(this.btn_createCustomer);
             this.Controls.Add(this.btn_goBack);
@@ -207,14 +221,14 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txBx_searchCustomer);
             this.Controls.Add(this.lbl_SearchCustomer);
             this.Name = "MaintainCustomers";
             this.Text = "MaintainCustomers";
             this.Load += new System.EventHandler(this.MaintainCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,7 +237,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_SearchCustomer;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txBx_searchCustomer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -240,5 +254,6 @@
         private System.Windows.Forms.Button btn_goBack;
         private System.Windows.Forms.Button btn_createCustomer;
         private System.Windows.Forms.Button btn_advancedSearch;
+        private System.Windows.Forms.Button btn_refreshTable;
     }
 }
