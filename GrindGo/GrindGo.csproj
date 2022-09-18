@@ -70,6 +70,17 @@
     <Compile Include="form_LoginPage.Designer.cs">
       <DependentUpon>form_LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="GrindGoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrindGoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MaintainCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainCustomers.Designer.cs">
+      <DependentUpon>MaintainCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminLogin.resx">
@@ -84,6 +95,9 @@
     <EmbeddedResource Include="form_LoginPage.resx">
       <DependentUpon>form_LoginPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaintainCustomers.resx">
+      <DependentUpon>MaintainCustomers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -94,6 +108,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="GrindGoDataSet.xsc">
+      <DependentUpon>GrindGoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GrindGoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GrindGoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GrindGoDataSet.xss">
+      <DependentUpon>GrindGoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

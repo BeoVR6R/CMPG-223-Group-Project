@@ -30,7 +30,6 @@
         {
             this.btn_Login = new System.Windows.Forms.Button();
             this.btn_adminPanel = new System.Windows.Forms.Button();
-            this.listBx_Order = new System.Windows.Forms.ListBox();
             this.lbl_Order = new System.Windows.Forms.Label();
             this.btn_HouseBlend = new System.Windows.Forms.Button();
             this.btn_Cappuccino = new System.Windows.Forms.Button();
@@ -38,6 +37,12 @@
             this.btn_HotDrinks = new System.Windows.Forms.Button();
             this.btn_Fanta = new System.Windows.Forms.Button();
             this.btn_Coke = new System.Windows.Forms.Button();
+            this.rTB_Order = new System.Windows.Forms.RichTextBox();
+            this.btn_ClearOrder = new System.Windows.Forms.Button();
+            this.btnCalculatePrice = new System.Windows.Forms.Button();
+            this.lbl_Price = new System.Windows.Forms.Label();
+            this.btn_placeOrder = new System.Windows.Forms.Button();
+            this.btn_cashierReceipt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Login
@@ -60,14 +65,6 @@
             this.btn_adminPanel.UseVisualStyleBackColor = true;
             this.btn_adminPanel.Click += new System.EventHandler(this.btn_adminPanel_Click);
             // 
-            // listBx_Order
-            // 
-            this.listBx_Order.FormattingEnabled = true;
-            this.listBx_Order.Location = new System.Drawing.Point(668, 34);
-            this.listBx_Order.Name = "listBx_Order";
-            this.listBx_Order.Size = new System.Drawing.Size(120, 290);
-            this.listBx_Order.TabIndex = 2;
-            // 
             // lbl_Order
             // 
             this.lbl_Order.AutoSize = true;
@@ -85,6 +82,7 @@
             this.btn_HouseBlend.TabIndex = 4;
             this.btn_HouseBlend.Text = "House Blend R9,99";
             this.btn_HouseBlend.UseVisualStyleBackColor = true;
+            this.btn_HouseBlend.Click += new System.EventHandler(this.btn_HouseBlend_Click);
             // 
             // btn_Cappuccino
             // 
@@ -133,12 +131,75 @@
             this.btn_Coke.Text = "Coke R9,99";
             this.btn_Coke.UseVisualStyleBackColor = true;
             // 
+            // rTB_Order
+            // 
+            this.rTB_Order.Location = new System.Drawing.Point(668, 40);
+            this.rTB_Order.Name = "rTB_Order";
+            this.rTB_Order.Size = new System.Drawing.Size(120, 256);
+            this.rTB_Order.TabIndex = 10;
+            this.rTB_Order.Text = "";
+            // 
+            // btn_ClearOrder
+            // 
+            this.btn_ClearOrder.Location = new System.Drawing.Point(517, 40);
+            this.btn_ClearOrder.Name = "btn_ClearOrder";
+            this.btn_ClearOrder.Size = new System.Drawing.Size(145, 23);
+            this.btn_ClearOrder.TabIndex = 11;
+            this.btn_ClearOrder.Text = "CLEAR ORDER";
+            this.btn_ClearOrder.UseVisualStyleBackColor = true;
+            this.btn_ClearOrder.Click += new System.EventHandler(this.btn_ClearOrder_Click);
+            // 
+            // btnCalculatePrice
+            // 
+            this.btnCalculatePrice.Location = new System.Drawing.Point(517, 273);
+            this.btnCalculatePrice.Name = "btnCalculatePrice";
+            this.btnCalculatePrice.Size = new System.Drawing.Size(145, 23);
+            this.btnCalculatePrice.TabIndex = 12;
+            this.btnCalculatePrice.Text = "CALCULATE PRICE";
+            this.btnCalculatePrice.UseVisualStyleBackColor = true;
+            this.btnCalculatePrice.Click += new System.EventHandler(this.btnCalculatePrice_Click);
+            // 
+            // lbl_Price
+            // 
+            this.lbl_Price.AutoSize = true;
+            this.lbl_Price.Location = new System.Drawing.Point(575, 299);
+            this.lbl_Price.Name = "lbl_Price";
+            this.lbl_Price.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Price.TabIndex = 13;
+            this.lbl_Price.Text = "label1";
+            // 
+            // btn_placeOrder
+            // 
+            this.btn_placeOrder.Location = new System.Drawing.Point(696, 364);
+            this.btn_placeOrder.Name = "btn_placeOrder";
+            this.btn_placeOrder.Size = new System.Drawing.Size(92, 74);
+            this.btn_placeOrder.TabIndex = 14;
+            this.btn_placeOrder.Text = "PLACE ORDER";
+            this.btn_placeOrder.UseVisualStyleBackColor = true;
+            this.btn_placeOrder.Click += new System.EventHandler(this.btn_placeOrder_Click);
+            // 
+            // btn_cashierReceipt
+            // 
+            this.btn_cashierReceipt.Location = new System.Drawing.Point(598, 364);
+            this.btn_cashierReceipt.Name = "btn_cashierReceipt";
+            this.btn_cashierReceipt.Size = new System.Drawing.Size(92, 74);
+            this.btn_cashierReceipt.TabIndex = 15;
+            this.btn_cashierReceipt.Text = "CASHIER RECEIPT";
+            this.btn_cashierReceipt.UseVisualStyleBackColor = true;
+            this.btn_cashierReceipt.Click += new System.EventHandler(this.btn_cashierReceipt_Click);
+            // 
             // form_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_cashierReceipt);
+            this.Controls.Add(this.btn_placeOrder);
+            this.Controls.Add(this.lbl_Price);
+            this.Controls.Add(this.btnCalculatePrice);
+            this.Controls.Add(this.btn_ClearOrder);
+            this.Controls.Add(this.rTB_Order);
             this.Controls.Add(this.btn_Coke);
             this.Controls.Add(this.btn_Fanta);
             this.Controls.Add(this.btn_HotDrinks);
@@ -146,7 +207,6 @@
             this.Controls.Add(this.btn_Cappuccino);
             this.Controls.Add(this.btn_HouseBlend);
             this.Controls.Add(this.lbl_Order);
-            this.Controls.Add(this.listBx_Order);
             this.Controls.Add(this.btn_adminPanel);
             this.Controls.Add(this.btn_Login);
             this.Name = "form_Homepage";
@@ -161,7 +221,6 @@
 
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.Button btn_adminPanel;
-        private System.Windows.Forms.ListBox listBx_Order;
         private System.Windows.Forms.Label lbl_Order;
         private System.Windows.Forms.Button btn_HouseBlend;
         private System.Windows.Forms.Button btn_Cappuccino;
@@ -169,5 +228,11 @@
         private System.Windows.Forms.Button btn_HotDrinks;
         private System.Windows.Forms.Button btn_Fanta;
         private System.Windows.Forms.Button btn_Coke;
+        private System.Windows.Forms.RichTextBox rTB_Order;
+        private System.Windows.Forms.Button btn_ClearOrder;
+        private System.Windows.Forms.Button btnCalculatePrice;
+        private System.Windows.Forms.Label lbl_Price;
+        private System.Windows.Forms.Button btn_placeOrder;
+        private System.Windows.Forms.Button btn_cashierReceipt;
     }
 }

@@ -16,5 +16,17 @@ namespace GrindGo
         {
             InitializeComponent();
         }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_maintainCustomers_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MaintainCustomers formMaintainCustomers = new MaintainCustomers();
+            formMaintainCustomers.Show();
+        }
     }
 }
