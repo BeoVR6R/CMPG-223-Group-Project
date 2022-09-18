@@ -36,7 +36,8 @@ namespace GrindGo
 
         private void btn_createCustomer_Click(object sender, EventArgs e)
         {
-
+            AddCustomer formaddCustomer = new AddCustomer();
+            formaddCustomer.Show();
         }
     }
 }
