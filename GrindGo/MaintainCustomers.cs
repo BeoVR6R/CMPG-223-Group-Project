@@ -120,5 +120,53 @@ namespace GrindGo
             }
             
         }
+
+        private void btn_updateCustomer_Click(object sender, EventArgs e)
+        {
+            if (txBx_searchCustomer.Text ==  "")
+            {
+                MessageBox.Show("Pease enter a value in the search box.");
+            }
+            else
+            {
+                EditCustomer formEditCustomer = new EditCustomer();
+                formEditCustomer.Show();
+
+                string firstName = GetCustomerDetails("firstName");
+                string lastName = GetCustomerDetails("lastName");
+                string address = GetCustomerDetails("residentialAddress");
+                string emailAddress = search;
+                string password = GetCustomerDetails("password");
+
+                formEditCustomer.LoadCustomerInfo(firstName, lastName, address, emailAddress, password);
+            }
+        }
+
+        private string GetCustomerDetails(string value)
+        {
+            string returnString = "";
+
+            try
+            {
+                string query = "SELECT " + value + " FROM adminClass.CUSTOMER WHERE emailAddress = '" + search + "';";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandTimeout = 60;
+                cmd.CommandText = query;
+
+                conn.Open();
+                returnString = (string)cmd.ExecuteScalar();
+            }
+            catch
+            {
+                returnString = "ERROR";
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return returnString;
+        }
     }
 }

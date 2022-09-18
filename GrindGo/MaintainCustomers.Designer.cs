@@ -166,6 +166,7 @@
             this.btn_updateCustomer.TabIndex = 6;
             this.btn_updateCustomer.Text = "UPDATE SELECTED";
             this.btn_updateCustomer.UseVisualStyleBackColor = true;
+            this.btn_updateCustomer.Click += new System.EventHandler(this.btn_updateCustomer_Click);
             // 
             // btn_goBack
             // 
