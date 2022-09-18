@@ -38,11 +38,11 @@ namespace GrindGo
 
         private void EditCustomer_Load(object sender, EventArgs e)
         {
-           /* txtBx_C__edit_firstName.Text = "";
+            txtBx_C__edit_firstName.Text = "";
             txtBx_C__edit_lastName.Text = "";
             txtBx_C__edit_address.Text = "";
             txtBx_C__edit_emailAddress.Text = "";
-            txtBx_C__edit_password.Text = "";*/
+            txtBx_C__edit_password.Text = "";
         }
 
         public void LoadCustomerInfo(string firstName, string lastName, string residentialAddress, string emailAddress, string password)
@@ -53,8 +53,10 @@ namespace GrindGo
                 txtBx_C__edit_lastName.Text = lastName; 
                 txtBx_C__edit_address.Text = residentialAddress;
                 txtBx_C__edit_emailAddress.Text = emailAddress;
-                txtBx_C__edit_password.Text = password; 
-                
+                txtBx_C__edit_password.Text = password;
+
+                GetCustomerID(emailAddress);
+
             }
             catch
             {
@@ -66,7 +68,10 @@ namespace GrindGo
         {
             try
             {
-                string query = "UPDATE adminClass.CUSTOMER SET firstName = '" + txtBx_C__edit_firstName.Text + "', lastName = '" + txtBx_C__edit_lastName.Text + "', residentialAddress = '" + txtBx_C__edit_address.Text + "', emailAddress = '" + txtBx_C__edit_emailAddress.Text + "', password = '" + txtBx_C__edit_password.Text + "' WHERE customerID = " + customerId +";";
+
+                string query = "UPDATE adminClass.CUSTOMER SET firstName = '" + txtBx_C__edit_firstName.Text + "', lastName = '" + txtBx_C__edit_lastName.Text + "', " +
+                    "residentialAddress = '" + txtBx_C__edit_address.Text + "', emailAddress = '" + txtBx_C__edit_emailAddress.Text + "', password = '"
+                    + txtBx_C__edit_password.Text + "' WHERE customerID = " + customerId + ";";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
