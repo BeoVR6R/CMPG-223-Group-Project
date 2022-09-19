@@ -211,6 +211,7 @@ namespace GrindGo
         {
             AddCustomer formAddCustomer = new AddCustomer();
             formAddCustomer.Show();
+            this.Hide();
         }
 
         private void form_LoginPage_Load(object sender, EventArgs e)
