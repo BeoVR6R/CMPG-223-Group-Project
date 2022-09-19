@@ -64,6 +64,12 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel_Reports.Designer.cs">
+      <DependentUpon>AdminPanel_Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel_Reports.resx">
+      <DependentUpon>AdminPanel_Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>

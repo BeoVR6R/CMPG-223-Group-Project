@@ -28,5 +28,12 @@ namespace GrindGo
             MaintainCustomers formMaintainCustomers = new MaintainCustomers();
             formMaintainCustomers.Show();
         }
+
+        private void btn_Reports_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AdminPanel_Reports form_admin_reports = new AdminPanel_Reports();
+            form_admin_reports.Show();  
+        }
     }
 }
