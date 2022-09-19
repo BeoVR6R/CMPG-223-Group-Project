@@ -39,6 +39,9 @@
             this.txtBx_emailAddress = new System.Windows.Forms.TextBox();
             this.txtBx_Password = new System.Windows.Forms.TextBox();
             this.btn_addCustomer = new System.Windows.Forms.Button();
+            this.txtBx_confirmPassword = new System.Windows.Forms.TextBox();
+            this.lbl_confimPassword = new System.Windows.Forms.Label();
+            this.btn_add_c_return = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_C_firstName
@@ -116,8 +119,9 @@
             // 
             // txtBx_Password
             // 
-            this.txtBx_Password.Location = new System.Drawing.Point(196, 126);
+            this.txtBx_Password.Location = new System.Drawing.Point(196, 122);
             this.txtBx_Password.Name = "txtBx_Password";
+            this.txtBx_Password.PasswordChar = '*';
             this.txtBx_Password.Size = new System.Drawing.Size(179, 20);
             this.txtBx_Password.TabIndex = 9;
             // 
@@ -131,12 +135,42 @@
             this.btn_addCustomer.UseVisualStyleBackColor = true;
             this.btn_addCustomer.Click += new System.EventHandler(this.btn_addCustomer_Click);
             // 
+            // txtBx_confirmPassword
+            // 
+            this.txtBx_confirmPassword.Location = new System.Drawing.Point(197, 148);
+            this.txtBx_confirmPassword.Name = "txtBx_confirmPassword";
+            this.txtBx_confirmPassword.PasswordChar = '*';
+            this.txtBx_confirmPassword.Size = new System.Drawing.Size(179, 20);
+            this.txtBx_confirmPassword.TabIndex = 11;
+            // 
+            // lbl_confimPassword
+            // 
+            this.lbl_confimPassword.AutoSize = true;
+            this.lbl_confimPassword.Location = new System.Drawing.Point(12, 151);
+            this.lbl_confimPassword.Name = "lbl_confimPassword";
+            this.lbl_confimPassword.Size = new System.Drawing.Size(99, 13);
+            this.lbl_confimPassword.TabIndex = 12;
+            this.lbl_confimPassword.Text = "Re-enter password:";
+            // 
+            // btn_add_c_return
+            // 
+            this.btn_add_c_return.Location = new System.Drawing.Point(5, 203);
+            this.btn_add_c_return.Name = "btn_add_c_return";
+            this.btn_add_c_return.Size = new System.Drawing.Size(110, 60);
+            this.btn_add_c_return.TabIndex = 13;
+            this.btn_add_c_return.Text = "RETURN";
+            this.btn_add_c_return.UseVisualStyleBackColor = true;
+            this.btn_add_c_return.Click += new System.EventHandler(this.btn_add_c_return_Click);
+            // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(388, 275);
+            this.Controls.Add(this.btn_add_c_return);
+            this.Controls.Add(this.lbl_confimPassword);
+            this.Controls.Add(this.txtBx_confirmPassword);
             this.Controls.Add(this.btn_addCustomer);
             this.Controls.Add(this.txtBx_Password);
             this.Controls.Add(this.txtBx_emailAddress);
@@ -168,5 +202,8 @@
         private System.Windows.Forms.TextBox txtBx_emailAddress;
         private System.Windows.Forms.TextBox txtBx_Password;
         private System.Windows.Forms.Button btn_addCustomer;
+        private System.Windows.Forms.TextBox txtBx_confirmPassword;
+        private System.Windows.Forms.Label lbl_confimPassword;
+        private System.Windows.Forms.Button btn_add_c_return;
     }
 }

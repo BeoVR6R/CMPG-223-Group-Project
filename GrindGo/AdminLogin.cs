@@ -18,7 +18,7 @@ namespace GrindGo
         }
 
         string masterPassword = "1234";
-        int counter = 0;  
+        int counter = 0;
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
@@ -27,9 +27,10 @@ namespace GrindGo
 
         private void btn_adminLogin_Click(object sender, EventArgs e)
         {
+            lbl_Message.Text = "";
             string enteredPassword = txtBx_adminPassword.Text;
             if (string.IsNullOrEmpty(enteredPassword))
-                lbl_Message.Text = "Value is required!";
+                MessageBox.Show("Password is required.");
 
             if (enteredPassword == masterPassword)
             {
@@ -42,7 +43,7 @@ namespace GrindGo
             {
                 if (counter == 2)
                     this.Close();
-                lbl_Message.Text = "You have entered the wrong password.";
+                MessageBox.Show("You have entered the wrong password.");
                 counter++;
             }
         }

@@ -47,6 +47,7 @@ namespace GrindGo
             string address = txtBx_Address.Text;
             string emailAddress = txtBx_emailAddress.Text;
             string password = txtBx_Password.Text;
+            string confirmPassword = txtBx_confirmPassword.Text;
 
 
             if (txtBx_firstName.Text.Length == 0 || txtBx_lastName.Text.Length == 0 || txtBx_Address.Text.Length == 0 || txtBx_emailAddress.Text.Length == 0 || txtBx_Password.Text.Length == 0)
@@ -56,6 +57,10 @@ namespace GrindGo
             else if (IsValidEmail(emailAddress) == false)
             {
                 MessageBox.Show("Please enter a valid email address.");
+            }
+            else if (password != confirmPassword)
+            {
+                MessageBox.Show("Passwords do not match.");
             }
             else
             {
@@ -84,6 +89,11 @@ namespace GrindGo
                     conn.Close();
                 }
             }
+        }
+
+        private void btn_add_c_return_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
