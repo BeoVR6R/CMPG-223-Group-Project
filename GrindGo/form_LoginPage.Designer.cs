@@ -154,6 +154,7 @@
             this.btn_login_createAccount.TabIndex = 11;
             this.btn_login_createAccount.Text = "CREATE";
             this.btn_login_createAccount.UseVisualStyleBackColor = true;
+            this.btn_login_createAccount.Click += new System.EventHandler(this.btn_login_createAccount_Click);
             // 
             // form_LoginPage
             // 
@@ -175,6 +176,7 @@
             this.Controls.Add(this.lbl_Welcome);
             this.Name = "form_LoginPage";
             this.Text = "GrindGo -  Login Page";
+            this.Load += new System.EventHandler(this.form_LoginPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,8 +188,6 @@
         private System.Windows.Forms.Label lbl_Welcome;
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_Password;
-        private System.Windows.Forms.TextBox txtBx_Email;
-        private System.Windows.Forms.TextBox txtBx_Password;
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.Button btn_DevLogin;
@@ -195,6 +195,8 @@
         private System.Windows.Forms.Button btn_needHelp;
         private System.Windows.Forms.Label lbl_login_createAccount;
         private System.Windows.Forms.Button btn_login_createAccount;
+        public System.Windows.Forms.TextBox txtBx_Password;
+        public System.Windows.Forms.TextBox txtBx_Email;
     }
 }
 

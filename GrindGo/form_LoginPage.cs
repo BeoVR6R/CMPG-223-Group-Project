@@ -24,7 +24,7 @@ namespace GrindGo
         string emailAddress;
         string password;
         string firstName;
-        bool loginStatus;
+        bool loginStatus = false;
 
         private void lbl_Welcome_Click(object sender, EventArgs e)
         {
@@ -49,6 +49,18 @@ namespace GrindGo
             if (txtBx_Email.Text == "" && txtBx_Password.Text == "")
             {
                 MessageBox.Show("Email address and password is required.");
+            }
+            else if (txtBx_Email.Text == "")
+            {
+                MessageBox.Show("Email address is required.");
+            }
+            else if (txtBx_Password.Text == "")
+            {
+                MessageBox.Show("Password is required.");
+            }
+            else if (!IsValidEmail(txtBx_Email.Text))
+            {
+                MessageBox.Show("A Valid Email address is required.");
             }
             else
             {
@@ -78,7 +90,21 @@ namespace GrindGo
                 cmd.CommandText = query;
 
                 conn.Open();
-                customerId = (int)cmd.ExecuteScalar();
+                
+               
+                var returnVal = cmd.ExecuteScalar();
+                
+                if (returnVal == null)
+                {
+                    MessageBox.Show("Error, user not found.\n\n" +
+                        "Please click on the register new user.");
+                    loginStatus = false;
+                }
+                else
+                {
+                    customerId = Convert.ToInt32(returnVal);
+                }
+               
             }
             catch
             {
@@ -94,25 +120,30 @@ namespace GrindGo
         {
             GetCustomerID(emailAddress);
 
-            if (customerId == 0)
+            string query = "SELECT password FROM adminClass.CUSTOMER WHERE customerID = '" + customerId + "';";
+            if (txtBx_Password.Text != "")
             {
-                MessageBox.Show("User does not exist. Please register an account.");
-            }
-            else
-            {
-                string query = "SELECT password FROM adminClass.CUSTOMER WHERE customerID = '" + customerId + "';";
                 GetPassword(query);
 
                 if (this.password == password)
                 {
                     GetFirstName();
                     MessageBox.Show("Login Successful.\n\n" +
-                        "Welcome, " + firstName);
+                       "Welcome, " + firstName);
+                    loginStatus = true;
+                    form_Homepage formHome = new form_Homepage();
+                    formHome.Show();
+                    this.Hide();
                 }
-                else
+                else if (loginStatus)
                 {
                     MessageBox.Show("Incorrect Password.");
                 }
+                else if(this.password != password)
+                {
+                    MessageBox.Show("Incorrect Password.");
+                }
+
             }
         }
 
@@ -146,13 +177,46 @@ namespace GrindGo
                 cmd.CommandText = query;
 
                 conn.Open();
-                firstName = (string)cmd.ExecuteScalar();
+                
+                
+                firstName = (string)cmd.ExecuteScalar(); 
             }
             catch
             {
                 MessageBox.Show("Error retrieving firstName.");
             }
             finally { conn.Close(); }
+        }
+
+        bool IsValidEmail(string email)
+        {
+            var trimmedEmail = email.Trim();
+
+            if (trimmedEmail.EndsWith("."))
+            {
+                return false; // suggested by @TK-421
+            }
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == trimmedEmail;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void btn_login_createAccount_Click(object sender, EventArgs e)
+        {
+            AddCustomer formAddCustomer = new AddCustomer();
+            formAddCustomer.Show();
+        }
+
+        private void form_LoginPage_Load(object sender, EventArgs e)
+        {
+            txtBx_Email.Clear();
+            txtBx_Password.Clear();
         }
     }
 }

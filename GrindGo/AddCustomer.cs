@@ -87,6 +87,7 @@ namespace GrindGo
                 finally
                 {
                     conn.Close();
+                    SendLoginInfo(emailAddress, password);
                 }
             }
         }
@@ -94,6 +95,21 @@ namespace GrindGo
         private void btn_add_c_return_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SendLoginInfo(string emailAddress, string password)
+        {
+            try
+            {
+                form_LoginPage formLoginPage = new form_LoginPage();
+
+                emailAddress = formLoginPage.txtBx_Email.Text;
+                password = formLoginPage.txtBx_Password.Text;
+            }
+            catch
+            {
+                MessageBox.Show("ERROR sending data.");
+            }
         }
     }
 }
