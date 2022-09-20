@@ -27,9 +27,8 @@ namespace GrindGo
 
         private void MaintainCustomers_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'grindGoDataSet.CUSTOMER' table. You can move, or remove it, as needed.
-            this.cUSTOMERTableAdapter.Fill(this.grindGoDataSet.CUSTOMER);
-
+            // TODO: This line of code loads data into the 'grindGoDataSet1.CUSTOMER' table. You can move, or remove it, as needed.
+            this.cUSTOMERTableAdapter1.Fill(this.grindGoDataSet1.CUSTOMER);
         }
 
         private void btn_goBack_Click(object sender, EventArgs e)
@@ -48,7 +47,7 @@ namespace GrindGo
         private void btn_refreshTable_Click(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand c = new SqlCommand("SELECT firstName, lastName, residentialAddress, emailAddress FROM adminClass.CUSTOMER", conn);
+            SqlCommand c = new SqlCommand("SELECT firstName, lastName, residentAddress, emailAddress, loyalty_Qty FROM adminClass.CUSTOMER", conn);
             SqlDataAdapter sda = new SqlDataAdapter(c);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -134,9 +133,9 @@ namespace GrindGo
 
                 string firstName = GetCustomerDetails("firstName");
                 string lastName = GetCustomerDetails("lastName");
-                string address = GetCustomerDetails("residentialAddress");
+                string address = GetCustomerDetails("residentAddress");
                 string emailAddress = search;
-                string password = GetCustomerDetails("password");
+                string password = GetCustomerDetails("c_password");
 
                 formEditCustomer.LoadCustomerInfo(firstName, lastName, address, emailAddress, password);
             }

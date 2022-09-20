@@ -70,8 +70,8 @@ namespace GrindGo
             {
 
                 string query = "UPDATE adminClass.CUSTOMER SET firstName = '" + txtBx_C__edit_firstName.Text + "', lastName = '" + txtBx_C__edit_lastName.Text + "', " +
-                    "residentialAddress = '" + txtBx_C__edit_address.Text + "', emailAddress = '" + txtBx_C__edit_emailAddress.Text + "', password = '"
-                    + txtBx_C__edit_password.Text + "' WHERE customerID = " + customerId + ";";
+                    "residentAddress = '" + txtBx_C__edit_address.Text + "', emailAddress = '" + txtBx_C__edit_emailAddress.Text + "', c_password = '"
+                    + txtBx_C__edit_password.Text + "' WHERE customer_ID = " + customerId + ";";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
@@ -95,7 +95,7 @@ namespace GrindGo
         {
             try
             {
-                string query = "SELECT customerID FROM adminClass.CUSTOMER WHERE emailAddress = '" + emailAddress + "';";
+                string query = "SELECT customer_ID FROM adminClass.CUSTOMER WHERE emailAddress = '" + emailAddress + "';";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;

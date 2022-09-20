@@ -29,7 +29,7 @@ namespace GrindGo
             btn_Fanta.Hide();
             btn_HouseBlend.Hide();
             btn_Cappuccino.Hide();
-            lbl_activeUser.Hide();
+            lbl_activeUser.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -139,12 +139,17 @@ namespace GrindGo
                 "\nAssigned to Cashier: \n");
         }
 
-        public void SetCustomerID(int c_ID)
+        public void LoadCustomerInfo(int c_ID, string email)
         {
-            lbl_activeUser.Show();
-            lbl_activeUser.Text = c_ID.ToString();
-            this.currentCustomerID = c_ID;
-            MessageBox.Show("" + c_ID);
+            try
+            {
+                lbl_activeUser.Text = "Logged in: " + email + c_ID;
+                currentCustomerID = c_ID;
+            }
+            catch
+            {
+                MessageBox.Show("Error loading customer info.");
+            }
         }
     }
 }

@@ -78,7 +78,7 @@ namespace GrindGo
                 "\n\nOr you can log in anonymously, loyalty points do not apply.");
         }
 
-        private void GetCustomerID(string emailAddress)
+        public void GetCustomerID(string emailAddress)
         {
             try
             {
@@ -132,13 +132,10 @@ namespace GrindGo
                        "Welcome, " + firstName);
                     loginStatus = true;
 
-                    if(loginStatus)
-                    {
-                        SendCustomerID(customerId);
-                    }
-
                     form_Homepage formHome = new form_Homepage();
                     formHome.Show();
+
+                    formHome.LoadCustomerInfo(customerId, emailAddress);
 
                     this.Hide();
                 }
@@ -225,13 +222,6 @@ namespace GrindGo
         {
             txtBx_Email.Clear();
             txtBx_Password.Clear();
-        }
-
-        private void SendCustomerID(int c_ID)
-        {
-            MessageBox.Show("" + c_ID);
-            form_Homepage formHomePage = new form_Homepage();
-            formHomePage.SetCustomerID(c_ID);
         }
     }
 }

@@ -33,12 +33,6 @@
             this.txBx_searchCustomer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Search = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.residentialAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loyaltyQtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grindGoDataSet = new GrindGo.GrindGoDataSet();
             this.cUSTOMERTableAdapter = new GrindGo.GrindGoDataSetTableAdapters.CUSTOMERTableAdapter();
@@ -48,9 +42,22 @@
             this.btn_createCustomer = new System.Windows.Forms.Button();
             this.btn_advancedSearch = new System.Windows.Forms.Button();
             this.btn_refreshTable = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grindGoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grindGoDataSet1 = new GrindGo.GrindGoDataSet1();
+            this.cUSTOMERBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cUSTOMERTableAdapter1 = new GrindGo.GrindGoDataSet1TableAdapters.CUSTOMERTableAdapter();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.residentAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loyaltyQtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_SearchCustomer
@@ -87,52 +94,6 @@
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = true;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.residentialAddressDataGridViewTextBoxColumn,
-            this.emailAddressDataGridViewTextBoxColumn,
-            this.loyaltyQtyDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.cUSTOMERBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(545, 218);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "firstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "lastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // residentialAddressDataGridViewTextBoxColumn
-            // 
-            this.residentialAddressDataGridViewTextBoxColumn.DataPropertyName = "residentialAddress";
-            this.residentialAddressDataGridViewTextBoxColumn.HeaderText = "residentialAddress";
-            this.residentialAddressDataGridViewTextBoxColumn.Name = "residentialAddressDataGridViewTextBoxColumn";
-            // 
-            // emailAddressDataGridViewTextBoxColumn
-            // 
-            this.emailAddressDataGridViewTextBoxColumn.DataPropertyName = "emailAddress";
-            this.emailAddressDataGridViewTextBoxColumn.HeaderText = "emailAddress";
-            this.emailAddressDataGridViewTextBoxColumn.Name = "emailAddressDataGridViewTextBoxColumn";
-            // 
-            // loyaltyQtyDataGridViewTextBoxColumn
-            // 
-            this.loyaltyQtyDataGridViewTextBoxColumn.DataPropertyName = "loyaltyQty";
-            this.loyaltyQtyDataGridViewTextBoxColumn.HeaderText = "loyaltyQty";
-            this.loyaltyQtyDataGridViewTextBoxColumn.Name = "loyaltyQtyDataGridViewTextBoxColumn";
             // 
             // cUSTOMERBindingSource
             // 
@@ -207,19 +168,84 @@
             this.btn_refreshTable.UseVisualStyleBackColor = true;
             this.btn_refreshTable.Click += new System.EventHandler(this.btn_refreshTable_Click);
             // 
+            // grindGoDataSetBindingSource
+            // 
+            this.grindGoDataSetBindingSource.DataSource = this.grindGoDataSet;
+            this.grindGoDataSetBindingSource.Position = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.residentAddressDataGridViewTextBoxColumn,
+            this.emailAddressDataGridViewTextBoxColumn,
+            this.loyaltyQtyDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.cUSTOMERBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 63);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(544, 218);
+            this.dataGridView1.TabIndex = 11;
+            // 
+            // grindGoDataSet1
+            // 
+            this.grindGoDataSet1.DataSetName = "GrindGoDataSet1";
+            this.grindGoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cUSTOMERBindingSource1
+            // 
+            this.cUSTOMERBindingSource1.DataMember = "CUSTOMER";
+            this.cUSTOMERBindingSource1.DataSource = this.grindGoDataSet1;
+            // 
+            // cUSTOMERTableAdapter1
+            // 
+            this.cUSTOMERTableAdapter1.ClearBeforeFill = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "firstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "lastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // residentAddressDataGridViewTextBoxColumn
+            // 
+            this.residentAddressDataGridViewTextBoxColumn.DataPropertyName = "residentAddress";
+            this.residentAddressDataGridViewTextBoxColumn.HeaderText = "residentAddress";
+            this.residentAddressDataGridViewTextBoxColumn.Name = "residentAddressDataGridViewTextBoxColumn";
+            // 
+            // emailAddressDataGridViewTextBoxColumn
+            // 
+            this.emailAddressDataGridViewTextBoxColumn.DataPropertyName = "emailAddress";
+            this.emailAddressDataGridViewTextBoxColumn.HeaderText = "emailAddress";
+            this.emailAddressDataGridViewTextBoxColumn.Name = "emailAddressDataGridViewTextBoxColumn";
+            // 
+            // loyaltyQtyDataGridViewTextBoxColumn
+            // 
+            this.loyaltyQtyDataGridViewTextBoxColumn.DataPropertyName = "loyalty_Qty";
+            this.loyaltyQtyDataGridViewTextBoxColumn.HeaderText = "loyalty_Qty";
+            this.loyaltyQtyDataGridViewTextBoxColumn.Name = "loyaltyQtyDataGridViewTextBoxColumn";
+            // 
             // MaintainCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_refreshTable);
             this.Controls.Add(this.btn_advancedSearch);
             this.Controls.Add(this.btn_createCustomer);
             this.Controls.Add(this.btn_goBack);
             this.Controls.Add(this.btn_updateCustomer);
             this.Controls.Add(this.btn_deleteCustomer);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txBx_searchCustomer);
@@ -227,9 +253,12 @@
             this.Name = "MaintainCustomers";
             this.Text = "MaintainCustomers";
             this.Load += new System.EventHandler(this.MaintainCustomers_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,20 +270,24 @@
         private System.Windows.Forms.TextBox txBx_searchCustomer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private GrindGoDataSet grindGoDataSet;
         private System.Windows.Forms.BindingSource cUSTOMERBindingSource;
         private GrindGoDataSetTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn residentialAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loyaltyQtyDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_deleteCustomer;
         private System.Windows.Forms.Button btn_updateCustomer;
         private System.Windows.Forms.Button btn_goBack;
         private System.Windows.Forms.Button btn_createCustomer;
         private System.Windows.Forms.Button btn_advancedSearch;
         private System.Windows.Forms.Button btn_refreshTable;
+        private System.Windows.Forms.BindingSource grindGoDataSetBindingSource;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private GrindGoDataSet1 grindGoDataSet1;
+        private System.Windows.Forms.BindingSource cUSTOMERBindingSource1;
+        private GrindGoDataSet1TableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn residentAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loyaltyQtyDataGridViewTextBoxColumn;
     }
 }

@@ -19,6 +19,7 @@ namespace GrindGo
         }
 
         SqlConnection conn = new SqlConnection(@"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=GrindGo;Data Source=BEO-PC\SQLEXPRESS");
+        int currentCustomerID;
 
         bool IsValidEmail(string email)
         {
@@ -81,8 +82,11 @@ namespace GrindGo
 
                     this.Close();
 
+                    GetCustomerID(emailAddress);
+
                     form_Homepage formHomePage = new form_Homepage();
                     formHomePage.Show();
+                    formHomePage.LoadCustomerInfo(currentCustomerID, emailAddress);
                 }
                 catch
                 {
@@ -98,6 +102,30 @@ namespace GrindGo
         private void btn_add_c_return_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GetCustomerID(string emailAddress)
+        {
+            try
+            {
+                string query = "SELECT customer_ID FROM adminClass.CUSTOMER WHERE emailAddress = '" + emailAddress + "';";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandTimeout = 60;
+                cmd.CommandText = query;
+
+                conn.Open();
+                currentCustomerID = (int)cmd.ExecuteScalar();
+            }
+            catch
+            {
+                MessageBox.Show("Failed to retrieve Customer ID.");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
