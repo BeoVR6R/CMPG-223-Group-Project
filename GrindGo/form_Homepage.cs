@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace GrindGo
 {
@@ -21,14 +22,14 @@ namespace GrindGo
         SqlConnection conn = new SqlConnection(@"Data Source=BEO-PC\SQLEXPRESS;Initial Catalog=GrindGo;Integrated Security=True");
         int counterHouseBlend = 0;
         string order = "";
-
+        int currentCustomerID;
         private void form_Homepage_Load(object sender, EventArgs e)
         {
             btn_Coke.Hide();
             btn_Fanta.Hide();
             btn_HouseBlend.Hide();
             btn_Cappuccino.Hide();
-            lbl_Price.Hide();
+            lbl_activeUser.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,27 +91,10 @@ namespace GrindGo
             return price;
         }
 
-        private string CalculateItems()
-        {
-            int counter = 0;
-            for (int i = 0; i < rTB_Order.Lines.Length; i++)
-            {
-                if (rTB_Order.Lines[i] == "HouseBlend")
-                {
-                    counter++;
-                }
-                
-            }
-
-            return order;
-        }
-
         private void btnCalculatePrice_Click(object sender, EventArgs e)
         {
-            lbl_Price.Show();
-            lbl_Price.Text = "";
             int price = CalculatePrice();
-            lbl_Price.Text = "Total is R: " + price;
+            MessageBox.Show("Total is R: " + price);
         }
 
         private void btn_placeOrder_Click(object sender, EventArgs e)
@@ -123,7 +107,7 @@ namespace GrindGo
             {
                 order += "House Blend X " + counterHouseBlend + "\n";
             }
-            if (price == 0)
+            if (rTB_Order.Text == "")
             {
                 MessageBox.Show("Order not Placed.\n\n" +
                     "No items in order.");
@@ -153,6 +137,14 @@ namespace GrindGo
                 "Items: \n" +
                 order +
                 "\nAssigned to Cashier: \n");
+        }
+
+        public void SetCustomerID(int c_ID)
+        {
+            lbl_activeUser.Show();
+            lbl_activeUser.Text = c_ID.ToString();
+            this.currentCustomerID = c_ID;
+            MessageBox.Show("" + c_ID);
         }
     }
 }

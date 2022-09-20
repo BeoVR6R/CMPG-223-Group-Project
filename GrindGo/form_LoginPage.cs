@@ -82,7 +82,7 @@ namespace GrindGo
         {
             try
             {
-                string query = "SELECT customerID FROM adminClass.CUSTOMER WHERE emailAddress = '" + emailAddress + "';";
+                string query = "SELECT customer_ID FROM adminClass.CUSTOMER WHERE emailAddress = '" + emailAddress + "';";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
@@ -120,7 +120,7 @@ namespace GrindGo
         {
             GetCustomerID(emailAddress);
 
-            string query = "SELECT password FROM adminClass.CUSTOMER WHERE customerID = '" + customerId + "';";
+            string query = "SELECT c_password FROM adminClass.CUSTOMER WHERE customer_ID = '" + customerId + "';";
             if (txtBx_Password.Text != "")
             {
                 GetPassword(query);
@@ -131,8 +131,15 @@ namespace GrindGo
                     MessageBox.Show("Login Successful.\n\n" +
                        "Welcome, " + firstName);
                     loginStatus = true;
+
+                    if(loginStatus)
+                    {
+                        SendCustomerID(customerId);
+                    }
+
                     form_Homepage formHome = new form_Homepage();
                     formHome.Show();
+
                     this.Hide();
                 }
                 else if (loginStatus)
@@ -170,7 +177,7 @@ namespace GrindGo
         {
             try
             {
-                string query = "SELECT firstName FROM adminClass.CUSTOMER WHERE customerID = '" + customerId + "';";
+                string query = "SELECT firstName FROM adminClass.CUSTOMER WHERE customer_ID = '" + customerId + "';";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandTimeout = 60;
@@ -218,6 +225,13 @@ namespace GrindGo
         {
             txtBx_Email.Clear();
             txtBx_Password.Clear();
+        }
+
+        private void SendCustomerID(int c_ID)
+        {
+            MessageBox.Show("" + c_ID);
+            form_Homepage formHomePage = new form_Homepage();
+            formHomePage.SetCustomerID(c_ID);
         }
     }
 }

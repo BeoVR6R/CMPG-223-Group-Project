@@ -40,14 +40,14 @@
             this.rTB_Order = new System.Windows.Forms.RichTextBox();
             this.btn_ClearOrder = new System.Windows.Forms.Button();
             this.btnCalculatePrice = new System.Windows.Forms.Button();
-            this.lbl_Price = new System.Windows.Forms.Label();
             this.btn_placeOrder = new System.Windows.Forms.Button();
             this.btn_cashierReceipt = new System.Windows.Forms.Button();
+            this.lbl_activeUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Login
             // 
-            this.btn_Login.Location = new System.Drawing.Point(12, 415);
+            this.btn_Login.Location = new System.Drawing.Point(12, 349);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(145, 23);
             this.btn_Login.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             // btn_adminPanel
             // 
-            this.btn_adminPanel.Location = new System.Drawing.Point(12, 386);
+            this.btn_adminPanel.Location = new System.Drawing.Point(12, 320);
             this.btn_adminPanel.Name = "btn_adminPanel";
             this.btn_adminPanel.Size = new System.Drawing.Size(145, 23);
             this.btn_adminPanel.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             this.lbl_Order.AutoSize = true;
             this.lbl_Order.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Order.Location = new System.Drawing.Point(544, 12);
+            this.lbl_Order.Location = new System.Drawing.Point(648, 9);
             this.lbl_Order.Name = "lbl_Order";
             this.lbl_Order.Size = new System.Drawing.Size(121, 16);
             this.lbl_Order.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // btn_HouseBlend
             // 
-            this.btn_HouseBlend.Location = new System.Drawing.Point(12, 112);
+            this.btn_HouseBlend.Location = new System.Drawing.Point(12, 130);
             this.btn_HouseBlend.Name = "btn_HouseBlend";
             this.btn_HouseBlend.Size = new System.Drawing.Size(92, 74);
             this.btn_HouseBlend.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             // btn_Cappuccino
             // 
-            this.btn_Cappuccino.Location = new System.Drawing.Point(110, 112);
+            this.btn_Cappuccino.Location = new System.Drawing.Point(110, 130);
             this.btn_Cappuccino.Name = "btn_Cappuccino";
             this.btn_Cappuccino.Size = new System.Drawing.Size(92, 74);
             this.btn_Cappuccino.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             // btn_ColdDrink
             // 
-            this.btn_ColdDrink.Location = new System.Drawing.Point(12, 12);
+            this.btn_ColdDrink.Location = new System.Drawing.Point(12, 28);
             this.btn_ColdDrink.Name = "btn_ColdDrink";
             this.btn_ColdDrink.Size = new System.Drawing.Size(92, 74);
             this.btn_ColdDrink.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             // btn_HotDrinks
             // 
-            this.btn_HotDrinks.Location = new System.Drawing.Point(110, 12);
+            this.btn_HotDrinks.Location = new System.Drawing.Point(110, 28);
             this.btn_HotDrinks.Name = "btn_HotDrinks";
             this.btn_HotDrinks.Size = new System.Drawing.Size(92, 74);
             this.btn_HotDrinks.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             // btn_Fanta
             // 
-            this.btn_Fanta.Location = new System.Drawing.Point(12, 192);
+            this.btn_Fanta.Location = new System.Drawing.Point(12, 210);
             this.btn_Fanta.Name = "btn_Fanta";
             this.btn_Fanta.Size = new System.Drawing.Size(92, 74);
             this.btn_Fanta.TabIndex = 8;
@@ -125,7 +125,7 @@
             // 
             // btn_Coke
             // 
-            this.btn_Coke.Location = new System.Drawing.Point(110, 192);
+            this.btn_Coke.Location = new System.Drawing.Point(110, 210);
             this.btn_Coke.Name = "btn_Coke";
             this.btn_Coke.Size = new System.Drawing.Size(92, 74);
             this.btn_Coke.TabIndex = 9;
@@ -134,17 +134,17 @@
             // 
             // rTB_Order
             // 
-            this.rTB_Order.Location = new System.Drawing.Point(547, 40);
+            this.rTB_Order.Location = new System.Drawing.Point(651, 28);
             this.rTB_Order.Name = "rTB_Order";
-            this.rTB_Order.Size = new System.Drawing.Size(241, 256);
+            this.rTB_Order.Size = new System.Drawing.Size(137, 256);
             this.rTB_Order.TabIndex = 10;
             this.rTB_Order.Text = "";
             // 
             // btn_ClearOrder
             // 
-            this.btn_ClearOrder.Location = new System.Drawing.Point(396, 40);
+            this.btn_ClearOrder.Location = new System.Drawing.Point(508, 28);
             this.btn_ClearOrder.Name = "btn_ClearOrder";
-            this.btn_ClearOrder.Size = new System.Drawing.Size(145, 23);
+            this.btn_ClearOrder.Size = new System.Drawing.Size(137, 55);
             this.btn_ClearOrder.TabIndex = 11;
             this.btn_ClearOrder.Text = "CLEAR ORDER";
             this.btn_ClearOrder.UseVisualStyleBackColor = true;
@@ -152,28 +152,19 @@
             // 
             // btnCalculatePrice
             // 
-            this.btnCalculatePrice.Location = new System.Drawing.Point(396, 262);
+            this.btnCalculatePrice.Location = new System.Drawing.Point(508, 229);
             this.btnCalculatePrice.Name = "btnCalculatePrice";
-            this.btnCalculatePrice.Size = new System.Drawing.Size(145, 23);
+            this.btnCalculatePrice.Size = new System.Drawing.Size(137, 55);
             this.btnCalculatePrice.TabIndex = 12;
             this.btnCalculatePrice.Text = "CALCULATE PRICE";
             this.btnCalculatePrice.UseVisualStyleBackColor = true;
             this.btnCalculatePrice.Click += new System.EventHandler(this.btnCalculatePrice_Click);
             // 
-            // lbl_Price
-            // 
-            this.lbl_Price.AutoSize = true;
-            this.lbl_Price.Location = new System.Drawing.Point(448, 288);
-            this.lbl_Price.Name = "lbl_Price";
-            this.lbl_Price.Size = new System.Drawing.Size(35, 13);
-            this.lbl_Price.TabIndex = 13;
-            this.lbl_Price.Text = "label1";
-            // 
             // btn_placeOrder
             // 
-            this.btn_placeOrder.Location = new System.Drawing.Point(696, 364);
+            this.btn_placeOrder.Location = new System.Drawing.Point(651, 302);
             this.btn_placeOrder.Name = "btn_placeOrder";
-            this.btn_placeOrder.Size = new System.Drawing.Size(92, 74);
+            this.btn_placeOrder.Size = new System.Drawing.Size(137, 74);
             this.btn_placeOrder.TabIndex = 14;
             this.btn_placeOrder.Text = "PLACE ORDER";
             this.btn_placeOrder.UseVisualStyleBackColor = true;
@@ -181,23 +172,32 @@
             // 
             // btn_cashierReceipt
             // 
-            this.btn_cashierReceipt.Location = new System.Drawing.Point(598, 364);
+            this.btn_cashierReceipt.Location = new System.Drawing.Point(508, 302);
             this.btn_cashierReceipt.Name = "btn_cashierReceipt";
-            this.btn_cashierReceipt.Size = new System.Drawing.Size(92, 74);
+            this.btn_cashierReceipt.Size = new System.Drawing.Size(137, 74);
             this.btn_cashierReceipt.TabIndex = 15;
             this.btn_cashierReceipt.Text = "CASHIER RECEIPT";
             this.btn_cashierReceipt.UseVisualStyleBackColor = true;
             this.btn_cashierReceipt.Click += new System.EventHandler(this.btn_cashierReceipt_Click);
+            // 
+            // lbl_activeUser
+            // 
+            this.lbl_activeUser.AutoSize = true;
+            this.lbl_activeUser.Location = new System.Drawing.Point(12, 9);
+            this.lbl_activeUser.Name = "lbl_activeUser";
+            this.lbl_activeUser.Size = new System.Drawing.Size(35, 13);
+            this.lbl_activeUser.TabIndex = 16;
+            this.lbl_activeUser.Text = "label1";
             // 
             // form_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 384);
+            this.Controls.Add(this.lbl_activeUser);
             this.Controls.Add(this.btn_cashierReceipt);
             this.Controls.Add(this.btn_placeOrder);
-            this.Controls.Add(this.lbl_Price);
             this.Controls.Add(this.btnCalculatePrice);
             this.Controls.Add(this.btn_ClearOrder);
             this.Controls.Add(this.rTB_Order);
@@ -232,8 +232,8 @@
         private System.Windows.Forms.RichTextBox rTB_Order;
         private System.Windows.Forms.Button btn_ClearOrder;
         private System.Windows.Forms.Button btnCalculatePrice;
-        private System.Windows.Forms.Label lbl_Price;
         private System.Windows.Forms.Button btn_placeOrder;
         private System.Windows.Forms.Button btn_cashierReceipt;
+        public System.Windows.Forms.Label lbl_activeUser;
     }
 }
