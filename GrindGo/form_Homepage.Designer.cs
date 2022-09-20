@@ -68,9 +68,10 @@
             // lbl_Order
             // 
             this.lbl_Order.AutoSize = true;
-            this.lbl_Order.Location = new System.Drawing.Point(665, 9);
+            this.lbl_Order.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Order.Location = new System.Drawing.Point(544, 12);
             this.lbl_Order.Name = "lbl_Order";
-            this.lbl_Order.Size = new System.Drawing.Size(98, 13);
+            this.lbl_Order.Size = new System.Drawing.Size(121, 16);
             this.lbl_Order.TabIndex = 3;
             this.lbl_Order.Text = "Items in your Order:";
             // 
@@ -133,15 +134,15 @@
             // 
             // rTB_Order
             // 
-            this.rTB_Order.Location = new System.Drawing.Point(668, 40);
+            this.rTB_Order.Location = new System.Drawing.Point(547, 40);
             this.rTB_Order.Name = "rTB_Order";
-            this.rTB_Order.Size = new System.Drawing.Size(120, 256);
+            this.rTB_Order.Size = new System.Drawing.Size(241, 256);
             this.rTB_Order.TabIndex = 10;
             this.rTB_Order.Text = "";
             // 
             // btn_ClearOrder
             // 
-            this.btn_ClearOrder.Location = new System.Drawing.Point(517, 40);
+            this.btn_ClearOrder.Location = new System.Drawing.Point(396, 40);
             this.btn_ClearOrder.Name = "btn_ClearOrder";
             this.btn_ClearOrder.Size = new System.Drawing.Size(145, 23);
             this.btn_ClearOrder.TabIndex = 11;
@@ -151,7 +152,7 @@
             // 
             // btnCalculatePrice
             // 
-            this.btnCalculatePrice.Location = new System.Drawing.Point(517, 273);
+            this.btnCalculatePrice.Location = new System.Drawing.Point(396, 262);
             this.btnCalculatePrice.Name = "btnCalculatePrice";
             this.btnCalculatePrice.Size = new System.Drawing.Size(145, 23);
             this.btnCalculatePrice.TabIndex = 12;
@@ -162,7 +163,7 @@
             // lbl_Price
             // 
             this.lbl_Price.AutoSize = true;
-            this.lbl_Price.Location = new System.Drawing.Point(575, 299);
+            this.lbl_Price.Location = new System.Drawing.Point(448, 288);
             this.lbl_Price.Name = "lbl_Price";
             this.lbl_Price.Size = new System.Drawing.Size(35, 13);
             this.lbl_Price.TabIndex = 13;
