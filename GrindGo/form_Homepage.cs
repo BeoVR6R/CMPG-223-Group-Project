@@ -22,13 +22,21 @@ namespace GrindGo
 
         SqlConnection conn = new SqlConnection(@"Data Source=BEO-PC\SQLEXPRESS;Initial Catalog=GrindGo;Integrated Security=True");
         int counterHouseBlend = 0;
+        int counterCappuccino = 0;
+        int counterFanta = 0;
+        int counterCoke = 0;
+        string houseBlend = "HouseBlend";
+        string cappuccino = "Cappuccino";
+        string fanta = "Fanta";
+        string coke = "Coke";
+        int houseBlendPrice, cappuccinoPrice, fantaPrice, cokePrice;
         string order = "";
         int currentCustomerID;
         int totalPrice;
         int cashierID = 1;
         int currentOrderID;
-        double houseBlend_Price = 9.99;
         int stockID;
+        bool orderPlaced = false;
         string currentTime = "";
         string currentDate = "";
         private void form_Homepage_Load(object sender, EventArgs e)
@@ -77,31 +85,73 @@ namespace GrindGo
         private void btn_ClearOrder_Click(object sender, EventArgs e)
         {
             rTB_Order.Clear();
+            order = "";
             counterHouseBlend = 0;
+            counterCoke = 0;
+            counterFanta = 0;
+            counterCappuccino = 0;  
         }
 
         private int CalculatePrice()
         {
             int price = 0;
             counterHouseBlend = 0;
+            counterCappuccino = 0;
+            counterFanta = 0;
+            counterCoke = 0;
 
-            for (int i = 0; i < rTB_Order.Lines.Length; i++)
+            for (int i = 0; i < rTB_Order.Lines.Length - 1; i++)
             {
-                if (rTB_Order.Lines[i] == "HouseBlend")
+                if (rTB_Order.Lines[i] == houseBlend)
                 {
                     counterHouseBlend++;
                 }
+                if (rTB_Order.Lines[i] == cappuccino)
+                {
+                    counterCappuccino++;
+                }
+                if (rTB_Order.Lines[i] == fanta)
+                {
+                    counterFanta++;
+                }
+                if (rTB_Order.Lines[i] == coke)
+                {
+                    counterCoke++;
+                }
             }
 
-            price = (int)houseBlend_Price * counterHouseBlend;
+            if(counterHouseBlend > 0)
+            {
+                houseBlendPrice = GetStockPrice(houseBlend);
+                price += (houseBlendPrice * counterHouseBlend);
+            }
+
+            if (counterCappuccino > 0)
+            {
+                cappuccinoPrice = GetStockPrice(cappuccino);
+                price += (cappuccinoPrice * counterCappuccino);
+            }
+
+            if (counterFanta > 0)
+            {
+                fantaPrice = GetStockPrice(fanta);
+                price += (fantaPrice * counterFanta);
+            }
+
+            if (counterCoke > 0)
+            {
+                cokePrice = GetStockPrice(coke);
+                price += (cokePrice * counterCoke);
+            }
 
             return price;
         }
 
         private void btnCalculatePrice_Click(object sender, EventArgs e)
         {
+            totalPrice = 0;
             totalPrice = CalculatePrice();
-            MessageBox.Show("Total is R: " + totalPrice);
+            MessageBox.Show("Total for the order is R: " + totalPrice);
         }
 
         private void btn_placeOrder_Click(object sender, EventArgs e)
@@ -110,10 +160,8 @@ namespace GrindGo
             totalPrice = 0;
             totalPrice = CalculatePrice();
 
-            if (counterHouseBlend > 0)
-            {
-                order += "House Blend X " + counterHouseBlend + "\n";
-            }
+            order = CreateOrderOutput();
+            
             if (rTB_Order.Text == "")
             {
                 MessageBox.Show("Order not Placed.\n\n" +
@@ -151,23 +199,30 @@ namespace GrindGo
                 "Items: \n\n" + order +
                 "\n\nTotal R: " + totalPrice + "\n\n" +
                 "Assigned to Cashier: Jeff Bezos\n");
+
+                orderPlaced = true;
+                rTB_Order.Clear();
             }
         }
 
         private void btn_cashierReceipt_Click(object sender, EventArgs e)
         {
-            order = "";
-
-            if (counterHouseBlend > 0)
+            if (!orderPlaced)
             {
-                order += "House Blend X " + counterHouseBlend + "\n";
+                MessageBox.Show("Error. An order first needs to be placed");
             }
-
-            MessageBox.Show("New Order\n\n" +
-                "Order NO: \n\n" +
-                "Items: \n" +
+            else if (orderPlaced)
+            {
+                MessageBox.Show("New Order\n\n" +
+                "Order NO: " + currentOrderID + "\n\n" +
+                "Items: \n\n" +
                  order +
-                "\nAssigned to Cashier: \n");
+                "\nCashier ID: " + cashierID);
+            }
+            else
+            {
+                MessageBox.Show("Error. Retrieving Cashier Receipt.");
+            }
         }
 
         public void LoadCustomerInfo(int c_ID, string email)
@@ -271,6 +326,21 @@ namespace GrindGo
             }
         }
 
+        private void btn_Cappuccino_Click(object sender, EventArgs e)
+        {
+            rTB_Order.AppendText("Cappuccino\n");
+        }
+
+        private void btn_Fanta_Click(object sender, EventArgs e)
+        {
+            rTB_Order.AppendText("Fanta\n");
+        }
+
+        private void btn_Coke_Click(object sender, EventArgs e)
+        {
+            rTB_Order.AppendText("Coke\n");
+        }
+
         private void PlaceConsumable(string queryConsumble)
         {
             try
@@ -300,7 +370,41 @@ namespace GrindGo
             {
                 return 10;
             }
+            if (stockName == "Cappucino")
+            {
+                return 14;
+            }
+            if (stockName == "Fanta")
+            {
+                return 10;
+            }
+            if (stockName == "Coke")
+            {
+                return 10;
+            }
+
             return 15;
+        }
+
+        private string CreateOrderOutput()
+        {
+            if (counterHouseBlend > 0)
+            {
+                order += "House Blend X " + counterHouseBlend + "\n";
+            }
+            if (counterCappuccino > 0)
+            {
+                order += "Cappuccino X " + counterCappuccino + "\n";
+            }
+            if (counterFanta > 0)
+            {
+                order += "Fanta X " + counterFanta + "\n";
+            }
+            if (counterCoke > 0)
+            {
+                order += "Coke X " + counterCoke + "\n";
+            }
+            return order;
         }
     }
 }

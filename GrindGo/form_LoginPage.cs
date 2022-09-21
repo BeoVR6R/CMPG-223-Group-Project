@@ -78,7 +78,7 @@ namespace GrindGo
                 "\n\nOr you can log in anonymously, loyalty points do not apply.");
         }
 
-        public void GetCustomerID(string emailAddress)
+        public bool GetCustomerID(string emailAddress)
         {
             try
             {
@@ -98,17 +98,19 @@ namespace GrindGo
                 {
                     MessageBox.Show("Error, user not found.\n\n" +
                         "Please click on the register new user.");
-                    loginStatus = false;
+                    return false;
                 }
                 else
                 {
                     customerId = Convert.ToInt32(returnVal);
+                    return true;
                 }
                
             }
             catch
             {
                 MessageBox.Show("Failed to retrieve Customer ID.");
+                return false;
             }
             finally
             {
@@ -118,36 +120,34 @@ namespace GrindGo
 
         private void ValidateLogin(string emailAddress, string password)
         {
-            GetCustomerID(emailAddress);
+            loginStatus = GetCustomerID(emailAddress);
 
-            string query = "SELECT c_password FROM adminClass.CUSTOMER WHERE customer_ID = '" + customerId + "';";
-            if (txtBx_Password.Text != "")
+            if (loginStatus)
             {
-                GetPassword(query);
-
-                if (this.password == password)
+                string query = "SELECT c_password FROM adminClass.CUSTOMER WHERE customer_ID = '" + customerId + "';";
+                if (txtBx_Password.Text != "")
                 {
-                    GetFirstName();
-                    MessageBox.Show("Login Successful.\n\n" +
-                       "Welcome, " + firstName);
-                    loginStatus = true;
+                    GetPassword(query);
 
-                    form_Homepage formHome = new form_Homepage();
-                    formHome.Show();
+                    if (this.password == password)
+                    {
+                        GetFirstName();
+                        MessageBox.Show("Login Successful.\n\n" +
+                           "Welcome, " + firstName);
+                        loginStatus = true;
 
-                    formHome.LoadCustomerInfo(customerId, emailAddress);
+                        form_Homepage formHome = new form_Homepage();
+                        formHome.Show();
 
-                    this.Hide();
+                        formHome.LoadCustomerInfo(customerId, emailAddress);
+
+                        this.Hide();
+                    }
+                    else if (this.password != password)
+                    {
+                        MessageBox.Show("Incorrect Password.1");
+                    }
                 }
-                else if (loginStatus)
-                {
-                    MessageBox.Show("Incorrect Password.");
-                }
-                else if(this.password != password)
-                {
-                    MessageBox.Show("Incorrect Password.");
-                }
-
             }
         }
 

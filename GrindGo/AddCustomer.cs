@@ -101,6 +101,8 @@ namespace GrindGo
 
         private void btn_add_c_return_Click(object sender, EventArgs e)
         {
+            form_LoginPage formLogin = new form_LoginPage();
+            formLogin.Show();
             this.Close();
         }
 

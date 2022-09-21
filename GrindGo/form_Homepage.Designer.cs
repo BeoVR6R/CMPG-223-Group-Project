@@ -93,6 +93,7 @@
             this.btn_Cappuccino.TabIndex = 5;
             this.btn_Cappuccino.Text = "Cappuccino R13,99";
             this.btn_Cappuccino.UseVisualStyleBackColor = true;
+            this.btn_Cappuccino.Click += new System.EventHandler(this.btn_Cappuccino_Click);
             // 
             // btn_ColdDrink
             // 
@@ -122,6 +123,7 @@
             this.btn_Fanta.TabIndex = 8;
             this.btn_Fanta.Text = "Fanta R9,99";
             this.btn_Fanta.UseVisualStyleBackColor = true;
+            this.btn_Fanta.Click += new System.EventHandler(this.btn_Fanta_Click);
             // 
             // btn_Coke
             // 
@@ -131,6 +133,7 @@
             this.btn_Coke.TabIndex = 9;
             this.btn_Coke.Text = "Coke R9,99";
             this.btn_Coke.UseVisualStyleBackColor = true;
+            this.btn_Coke.Click += new System.EventHandler(this.btn_Coke_Click);
             // 
             // rTB_Order
             // 
