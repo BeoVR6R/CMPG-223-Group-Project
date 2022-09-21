@@ -223,5 +223,14 @@ namespace GrindGo
             txtBx_Email.Clear();
             txtBx_Password.Clear();
         }
+
+        private void btn_aboutUs_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("GrindGo - Coffee" +
+                "\n\nNeed assistance?" +
+                "\nsupport@grindgo.co.za" +
+                "\n\nMake a suggestion?" +
+                "\nsuggestions@grindgo.co.za");
+        }
     }
 }

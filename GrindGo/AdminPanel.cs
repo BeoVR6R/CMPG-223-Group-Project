@@ -35,5 +35,10 @@ namespace GrindGo
             AdminPanel_Reports form_admin_reports = new AdminPanel_Reports();
             form_admin_reports.Show();  
         }
+
+        private void lbl_adminPanel_Maintain_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

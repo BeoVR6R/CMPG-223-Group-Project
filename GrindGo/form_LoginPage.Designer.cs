@@ -40,6 +40,7 @@
             this.btn_needHelp = new System.Windows.Forms.Button();
             this.lbl_login_createAccount = new System.Windows.Forms.Label();
             this.btn_login_createAccount = new System.Windows.Forms.Button();
+            this.btn_aboutUs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +112,7 @@
             // 
             this.btn_DevLogin.Location = new System.Drawing.Point(12, 12);
             this.btn_DevLogin.Name = "btn_DevLogin";
-            this.btn_DevLogin.Size = new System.Drawing.Size(75, 23);
+            this.btn_DevLogin.Size = new System.Drawing.Size(114, 22);
             this.btn_DevLogin.TabIndex = 7;
             this.btn_DevLogin.Text = "DEV LOGIN";
             this.btn_DevLogin.UseVisualStyleBackColor = true;
@@ -120,7 +121,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GrindGo.Properties.Resources.GrindGo_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(513, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(513, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(114, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -129,7 +130,7 @@
             // 
             // btn_needHelp
             // 
-            this.btn_needHelp.Location = new System.Drawing.Point(513, 123);
+            this.btn_needHelp.Location = new System.Drawing.Point(513, 132);
             this.btn_needHelp.Name = "btn_needHelp";
             this.btn_needHelp.Size = new System.Drawing.Size(114, 38);
             this.btn_needHelp.TabIndex = 9;
@@ -156,12 +157,23 @@
             this.btn_login_createAccount.UseVisualStyleBackColor = true;
             this.btn_login_createAccount.Click += new System.EventHandler(this.btn_login_createAccount_Click);
             // 
+            // btn_aboutUs
+            // 
+            this.btn_aboutUs.Location = new System.Drawing.Point(513, 176);
+            this.btn_aboutUs.Name = "btn_aboutUs";
+            this.btn_aboutUs.Size = new System.Drawing.Size(114, 38);
+            this.btn_aboutUs.TabIndex = 12;
+            this.btn_aboutUs.Text = "ABOUT US";
+            this.btn_aboutUs.UseVisualStyleBackColor = true;
+            this.btn_aboutUs.Click += new System.EventHandler(this.btn_aboutUs_Click);
+            // 
             // form_LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(632, 226);
+            this.Controls.Add(this.btn_aboutUs);
             this.Controls.Add(this.btn_login_createAccount);
             this.Controls.Add(this.lbl_login_createAccount);
             this.Controls.Add(this.btn_needHelp);
@@ -197,6 +209,7 @@
         private System.Windows.Forms.Button btn_login_createAccount;
         public System.Windows.Forms.TextBox txtBx_Password;
         public System.Windows.Forms.TextBox txtBx_Email;
+        private System.Windows.Forms.Button btn_aboutUs;
     }
 }
 

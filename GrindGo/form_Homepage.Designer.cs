@@ -43,6 +43,7 @@
             this.btn_placeOrder = new System.Windows.Forms.Button();
             this.btn_cashierReceipt = new System.Windows.Forms.Button();
             this.lbl_activeUser = new System.Windows.Forms.Label();
+            this.btn_H_needHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Login
@@ -145,7 +146,7 @@
             // 
             // btn_ClearOrder
             // 
-            this.btn_ClearOrder.Location = new System.Drawing.Point(508, 28);
+            this.btn_ClearOrder.Location = new System.Drawing.Point(508, 89);
             this.btn_ClearOrder.Name = "btn_ClearOrder";
             this.btn_ClearOrder.Size = new System.Drawing.Size(137, 55);
             this.btn_ClearOrder.TabIndex = 11;
@@ -192,12 +193,23 @@
             this.lbl_activeUser.TabIndex = 16;
             this.lbl_activeUser.Text = "label1";
             // 
+            // btn_H_needHelp
+            // 
+            this.btn_H_needHelp.Location = new System.Drawing.Point(508, 28);
+            this.btn_H_needHelp.Name = "btn_H_needHelp";
+            this.btn_H_needHelp.Size = new System.Drawing.Size(137, 55);
+            this.btn_H_needHelp.TabIndex = 17;
+            this.btn_H_needHelp.Text = "NEED HELP?";
+            this.btn_H_needHelp.UseVisualStyleBackColor = true;
+            this.btn_H_needHelp.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // form_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 384);
+            this.Controls.Add(this.btn_H_needHelp);
             this.Controls.Add(this.lbl_activeUser);
             this.Controls.Add(this.btn_cashierReceipt);
             this.Controls.Add(this.btn_placeOrder);
@@ -238,5 +250,6 @@
         private System.Windows.Forms.Button btn_placeOrder;
         private System.Windows.Forms.Button btn_cashierReceipt;
         public System.Windows.Forms.Label lbl_activeUser;
+        private System.Windows.Forms.Button btn_H_needHelp;
     }
 }

@@ -341,6 +341,18 @@ namespace GrindGo
             rTB_Order.AppendText("Coke\n");
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is our Homepage.\nHere you can select your order and have it placed.\n" +
+                "\nTo do this:\n1. Select either the Hot or Cold drink buttons." +
+                "\n2. More options are now revealed." +
+                "\n3. Selecting the consumable once will place a quanity of one" +
+                "\n4. Select multiple times to increase the desired quantity." +
+                "\n5. You may view the Total Price before placing the order by pressing 'Calculate Price'" +
+                "\n6. Lastly, if you are happy with the order, select the 'Place Order' button." +
+                "\n\nThank you for supporting us!");
+        }
+
         private void PlaceConsumable(string queryConsumble)
         {
             try
