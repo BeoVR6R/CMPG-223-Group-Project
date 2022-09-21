@@ -110,6 +110,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GrindGoDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GrindGoDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrindGoDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GrindGoStock.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +125,12 @@
     </Compile>
     <Compile Include="MaintainCustomers.Designer.cs">
       <DependentUpon>MaintainCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintainStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainStaff.Designer.cs">
+      <DependentUpon>MaintainStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="MaintainStock.cs">
       <SubType>Form</SubType>
@@ -159,6 +170,9 @@
     <EmbeddedResource Include="MaintainCustomers.resx">
       <DependentUpon>MaintainCustomers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaintainStaff.resx">
+      <DependentUpon>MaintainStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaintainStock.resx">
       <DependentUpon>MaintainStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +207,17 @@
     </None>
     <None Include="GrindGoDataSet1.xss">
       <DependentUpon>GrindGoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GrindGoDataSet2.xsc">
+      <DependentUpon>GrindGoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GrindGoDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GrindGoDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GrindGoDataSet2.xss">
+      <DependentUpon>GrindGoDataSet2.xsd</DependentUpon>
     </None>
     <None Include="GrindGoStock.xsc">
       <DependentUpon>GrindGoStock.xsd</DependentUpon>

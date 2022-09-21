@@ -39,7 +39,7 @@
             // 
             // btn_updateStock
             // 
-            this.btn_updateStock.Location = new System.Drawing.Point(266, 203);
+            this.btn_updateStock.Location = new System.Drawing.Point(266, 116);
             this.btn_updateStock.Name = "btn_updateStock";
             this.btn_updateStock.Size = new System.Drawing.Size(110, 60);
             this.btn_updateStock.TabIndex = 17;
@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(388, 275);
+            this.ClientSize = new System.Drawing.Size(388, 188);
             this.Controls.Add(this.txtBx_S_stockID);
             this.Controls.Add(this.txtBx_S_edit_costPrice);
             this.Controls.Add(this.txtBx_S_edit_Name);
