@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,63 @@ namespace GrindGo
         private void AddStock_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_add_s_return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_addStock_Click(object sender, EventArgs e)
+        {
+            string stockItemName = txtBx_S_itemName.Text;
+            decimal stockItemCostPrice = Convert.ToDecimal(txtBx_S_itemCostPrice.Text);
+
+            if(txtBx_S_itemName.Text == "" || txtBx_S_itemCostPrice.Text == "")
+            {
+                MessageBox.Show("All fields are required.");
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Item: " + stockItemName + "\nWith cost price: " + stockItemCostPrice + "\nWill be added." +
+                    "\n\nAre you sure?", "ALERT", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    AddStockItems(stockItemName, stockItemCostPrice);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("No changes have been made.");
+                }
+            }
+        }
+
+        private void AddStockItems(string itemName, decimal itemCostPrice)
+        {
+            try
+            {
+                string query = "INSERT INTO adminClass.STOCK VALUES ('" + itemName + "', " + itemCostPrice + ");";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandTimeout = 60;
+                cmd.CommandText = query;
+
+                conn.Open();
+                cmd.ExecuteScalar();
+
+                MessageBox.Show("Operation Completed Successfully.");
+
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error adding item into STOCK.");
+            }
+            finally
+            {
+                conn.Close();   
+            }
         }
     }
 }
