@@ -98,6 +98,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GrindGoDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GrindGoStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrindGoStock.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MaintainCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +175,17 @@
     </None>
     <None Include="GrindGoDataSet1.xss">
       <DependentUpon>GrindGoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GrindGoStock.xsc">
+      <DependentUpon>GrindGoStock.xsd</DependentUpon>
+    </None>
+    <None Include="GrindGoStock.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GrindGoStock.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GrindGoStock.xss">
+      <DependentUpon>GrindGoStock.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

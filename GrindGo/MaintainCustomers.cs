@@ -58,35 +58,42 @@ namespace GrindGo
 
         private void btn_deleteCustomer_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Customer with email address: " + search + "\n Will be deleted, are you sure?", "ALERT", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (search == "")
             {
-                try
-                {
-                    string query = "DELETE FROM adminClass.CUSTOMER WHERE emailAddress = '" + search + "';";
-
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandTimeout = 60;
-                    cmd.CommandText = query;
-
-                    conn.Open();
-                    cmd.ExecuteScalar();
-
-                    MessageBox.Show("User " + search + " Deleted Successfully.");
-                }
-                catch
-                {
-                    MessageBox.Show("Error has occured.");
-                }
-                finally
-                {
-                    conn.Close();
-                }
+                MessageBox.Show("Please search for a field.");
             }
-            else if (dialogResult == DialogResult.No)
+            else
             {
-                MessageBox.Show("No changes have been made.");
+                DialogResult dialogResult = MessageBox.Show("Customer with email address: " + search + "\n Will be deleted, are you sure?", "ALERT", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string query = "DELETE FROM adminClass.CUSTOMER WHERE emailAddress = '" + search + "';";
+
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = conn;
+                        cmd.CommandTimeout = 60;
+                        cmd.CommandText = query;
+
+                        conn.Open();
+                        cmd.ExecuteScalar();
+
+                        MessageBox.Show("User " + search + " Deleted Successfully.");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error has occured.");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("No changes have been made.");
+                }
             }
         }
 
