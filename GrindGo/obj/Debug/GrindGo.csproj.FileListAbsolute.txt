@@ -18,3 +18,4 @@ C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\Gri
 C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.AdminPanel_Reports.resources
 C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.MaintainStock.resources
 C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.EditStock.resources
+C:\Users\sjkru\source\repos\BeoVR6R\CMPG-223-Group-Project\GrindGo\obj\Debug\GrindGo.AddStock.resources

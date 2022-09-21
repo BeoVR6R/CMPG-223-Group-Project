@@ -148,7 +148,8 @@ namespace GrindGo
 
         private void btn_createStock_Click(object sender, EventArgs e)
         {
-
+            AddStock form_addStock = new AddStock();
+            form_addStock.Show();
         }
 
         private void btn_updateStock_Click(object sender, EventArgs e)
