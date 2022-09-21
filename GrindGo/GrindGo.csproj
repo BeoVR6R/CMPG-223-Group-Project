@@ -104,6 +104,12 @@
     <Compile Include="MaintainCustomers.Designer.cs">
       <DependentUpon>MaintainCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaintainStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainStock.Designer.cs">
+      <DependentUpon>MaintainStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddCustomer.resx">
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MaintainCustomers.resx">
       <DependentUpon>MaintainCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintainStock.resx">
+      <DependentUpon>MaintainStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

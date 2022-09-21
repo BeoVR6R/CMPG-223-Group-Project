@@ -94,6 +94,7 @@
             this.btn_maintainConsumables.TabIndex = 11;
             this.btn_maintainConsumables.Text = "Maintain Stock";
             this.btn_maintainConsumables.UseVisualStyleBackColor = true;
+            this.btn_maintainConsumables.Click += new System.EventHandler(this.btn_maintainConsumables_Click);
             // 
             // lbl_adminPanel_Maintain
             // 

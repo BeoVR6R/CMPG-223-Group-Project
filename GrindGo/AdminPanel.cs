@@ -40,5 +40,12 @@ namespace GrindGo
         {
 
         }
+
+        private void btn_maintainConsumables_Click(object sender, EventArgs e)
+        {
+            MaintainStock form_maintainStock = new MaintainStock();
+            this.Close();
+            form_maintainStock.Show();
+        }
     }
 }
