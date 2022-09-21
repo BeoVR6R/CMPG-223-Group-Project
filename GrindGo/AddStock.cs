@@ -35,23 +35,32 @@ namespace GrindGo
         private void btn_addStock_Click(object sender, EventArgs e)
         {
             string stockItemName = txtBx_S_itemName.Text;
-            decimal stockItemCostPrice = Convert.ToDecimal(txtBx_S_itemCostPrice.Text);
+            decimal stockItemCost;
 
-            if(txtBx_S_itemName.Text == "" || txtBx_S_itemCostPrice.Text == "")
+
+            if (txtBx_S_itemName.Text == "" || txtBx_S_itemCostPrice.Text == "")
             {
                 MessageBox.Show("All fields are required.");
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Item: " + stockItemName + "\nWith cost price: " + stockItemCostPrice + "\nWill be added." +
+                if (Decimal.TryParse(txtBx_S_itemCostPrice.Text, out stockItemCost))
+                {
+                    stockItemCost = Convert.ToDecimal(stockItemCost);
+                    DialogResult dialogResult = MessageBox.Show("Item: " + stockItemName + "\nWith cost price: " + stockItemCost + "\nWill be added." +
                     "\n\nAre you sure?", "ALERT", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    AddStockItems(stockItemName, stockItemCostPrice);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        AddStockItems(stockItemName, stockItemCost);
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show("No changes have been made.");
+                    }
                 }
-                else if (dialogResult == DialogResult.No)
+                else
                 {
-                    MessageBox.Show("No changes have been made.");
+                    MessageBox.Show("Field stock cost price is not number.");
                 }
             }
         }

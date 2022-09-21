@@ -75,6 +75,7 @@
             this.btn_maintainStaff.TabIndex = 9;
             this.btn_maintainStaff.Text = "Maintain Staff";
             this.btn_maintainStaff.UseVisualStyleBackColor = true;
+            this.btn_maintainStaff.Click += new System.EventHandler(this.btn_maintainStaff_Click);
             // 
             // btn_Reports
             // 

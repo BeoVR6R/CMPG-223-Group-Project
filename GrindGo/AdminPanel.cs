@@ -47,5 +47,12 @@ namespace GrindGo
             this.Close();
             form_maintainStock.Show();
         }
+
+        private void btn_maintainStaff_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MaintainStaff form_maintainStaff = new MaintainStaff();
+            form_maintainStaff.Show();
+        }
     }
 }

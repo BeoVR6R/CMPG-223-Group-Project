@@ -49,7 +49,6 @@
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.residentAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grindGoDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTAFFBindingSource)).BeginInit();
@@ -67,7 +66,7 @@
             // lbl_Staff_Search_Username
             // 
             this.lbl_Staff_Search_Username.AutoSize = true;
-            this.lbl_Staff_Search_Username.Location = new System.Drawing.Point(12, 40);
+            this.lbl_Staff_Search_Username.Location = new System.Drawing.Point(12, 36);
             this.lbl_Staff_Search_Username.Name = "lbl_Staff_Search_Username";
             this.lbl_Staff_Search_Username.Size = new System.Drawing.Size(58, 13);
             this.lbl_Staff_Search_Username.TabIndex = 3;
@@ -88,19 +87,21 @@
             this.btn_SearchStaff.TabIndex = 5;
             this.btn_SearchStaff.Text = "Search";
             this.btn_SearchStaff.UseVisualStyleBackColor = true;
+            this.btn_SearchStaff.Click += new System.EventHandler(this.btn_SearchStaff_Click);
             // 
             // btn_createStaff
             // 
-            this.btn_createStaff.Location = new System.Drawing.Point(565, 384);
+            this.btn_createStaff.Location = new System.Drawing.Point(466, 384);
             this.btn_createStaff.Name = "btn_createStaff";
             this.btn_createStaff.Size = new System.Drawing.Size(192, 54);
             this.btn_createStaff.TabIndex = 9;
             this.btn_createStaff.Text = "CREATE NEW STAFF MEMBER";
             this.btn_createStaff.UseVisualStyleBackColor = true;
+            this.btn_createStaff.Click += new System.EventHandler(this.btn_createStaff_Click);
             // 
             // btn_advancedSearch_Staff
             // 
-            this.btn_advancedSearch_Staff.Location = new System.Drawing.Point(565, 324);
+            this.btn_advancedSearch_Staff.Location = new System.Drawing.Point(466, 324);
             this.btn_advancedSearch_Staff.Name = "btn_advancedSearch_Staff";
             this.btn_advancedSearch_Staff.Size = new System.Drawing.Size(192, 54);
             this.btn_advancedSearch_Staff.TabIndex = 10;
@@ -109,12 +110,13 @@
             // 
             // btn_refreshTable_Staff
             // 
-            this.btn_refreshTable_Staff.Location = new System.Drawing.Point(565, 264);
+            this.btn_refreshTable_Staff.Location = new System.Drawing.Point(466, 215);
             this.btn_refreshTable_Staff.Name = "btn_refreshTable_Staff";
             this.btn_refreshTable_Staff.Size = new System.Drawing.Size(192, 54);
             this.btn_refreshTable_Staff.TabIndex = 11;
             this.btn_refreshTable_Staff.Text = "REFRESH TABLE";
             this.btn_refreshTable_Staff.UseVisualStyleBackColor = true;
+            this.btn_refreshTable_Staff.Click += new System.EventHandler(this.btn_refreshTable_Staff_Click);
             // 
             // btn_goBack_Staff
             // 
@@ -124,6 +126,7 @@
             this.btn_goBack_Staff.TabIndex = 12;
             this.btn_goBack_Staff.Text = "RETURN";
             this.btn_goBack_Staff.UseVisualStyleBackColor = true;
+            this.btn_goBack_Staff.Click += new System.EventHandler(this.btn_goBack_Staff_Click);
             // 
             // btn_deleteStaff
             // 
@@ -133,6 +136,7 @@
             this.btn_deleteStaff.TabIndex = 13;
             this.btn_deleteStaff.Text = "DELETE SELECTED";
             this.btn_deleteStaff.UseVisualStyleBackColor = true;
+            this.btn_deleteStaff.Click += new System.EventHandler(this.btn_deleteStaff_Click);
             // 
             // btn_updateStaff
             // 
@@ -153,12 +157,11 @@
             this.idNumDataGridViewTextBoxColumn,
             this.dateOfBirthDataGridViewTextBoxColumn,
             this.residentAddressDataGridViewTextBoxColumn,
-            this.usernameDataGridViewTextBoxColumn,
-            this.spasswordDataGridViewTextBoxColumn});
+            this.usernameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.sTAFFBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 59);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(745, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(646, 150);
             this.dataGridView1.TabIndex = 15;
             // 
             // grindGoDataSet2
@@ -211,18 +214,12 @@
             this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
             this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
             // 
-            // spasswordDataGridViewTextBoxColumn
-            // 
-            this.spasswordDataGridViewTextBoxColumn.DataPropertyName = "s_password";
-            this.spasswordDataGridViewTextBoxColumn.HeaderText = "s_password";
-            this.spasswordDataGridViewTextBoxColumn.Name = "spasswordDataGridViewTextBoxColumn";
-            // 
             // MaintainStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(763, 450);
+            this.ClientSize = new System.Drawing.Size(661, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_updateStaff);
             this.Controls.Add(this.btn_deleteStaff);
@@ -267,6 +264,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn residentAddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn spasswordDataGridViewTextBoxColumn;
     }
 }

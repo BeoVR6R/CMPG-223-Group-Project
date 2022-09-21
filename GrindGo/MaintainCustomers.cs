@@ -117,7 +117,7 @@ namespace GrindGo
                 }
                 catch
                 {
-                    MessageBox.Show("Error. Email Address not found");
+                    MessageBox.Show("Error. Staff username not found");
                 }
                 finally
                 {
