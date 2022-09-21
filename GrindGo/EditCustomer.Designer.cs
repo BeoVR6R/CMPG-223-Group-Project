@@ -88,7 +88,7 @@
             // lbl_C_lastName
             // 
             this.lbl_C_lastName.AutoSize = true;
-            this.lbl_C_lastName.Location = new System.Drawing.Point(11, 45);
+            this.lbl_C_lastName.Location = new System.Drawing.Point(12, 45);
             this.lbl_C_lastName.Name = "lbl_C_lastName";
             this.lbl_C_lastName.Size = new System.Drawing.Size(61, 13);
             this.lbl_C_lastName.TabIndex = 12;

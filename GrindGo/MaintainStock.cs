@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -76,13 +77,14 @@ namespace GrindGo
             }
         }
 
-        private string GetStockDetails(string value)
+        private int GetStockID(string value)
         {
-            string returnString = "";
+            int returnInteger = 0;
 
             try
             {
                 string query = "SELECT " + value + " FROM adminClass.STOCK WHERE stock_desc = '" + search + "';";
+
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
@@ -90,17 +92,17 @@ namespace GrindGo
                 cmd.CommandText = query;
 
                 conn.Open();
-                returnString = (string)cmd.ExecuteScalar();
+                returnInteger = (int)cmd.ExecuteScalar(); 
             }
             catch
             {
-                returnString = "ERROR";
+                MessageBox.Show("Error when executing StockID query");
             }
             finally
             {
                 conn.Close();
             }
-            return returnString;
+            return returnInteger;
         }
 
         private void btn_deleteStock_Click(object sender, EventArgs e)
@@ -111,7 +113,7 @@ namespace GrindGo
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Stock with name: " + search + "\n Will be deleted, are you sure?", "ALERT", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Stock with name: " + search + "\nWill be deleted, are you sure?", "ALERT", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     try
@@ -151,7 +153,49 @@ namespace GrindGo
 
         private void btn_updateStock_Click(object sender, EventArgs e)
         {
+            if (txBx_searchStock.Text == "")
+            {
+                MessageBox.Show("Pease enter a value in the search box.");
+            }
+            else
+            {
+                EditStock form_editStock = new EditStock();
+                form_editStock.Show();
 
+                int stockID = GetStockID("stock_ID");
+                string stockName = search;
+                decimal stockCostPrice = GetStockCostPrice("stock_costPrice");
+
+                form_editStock.LoadStockInfo(stockID, stockName, stockCostPrice);
+            }
+        }
+
+        private decimal GetStockCostPrice(string value)
+        {
+            decimal returnInteger = 0;
+
+            try
+            {
+                string query = "SELECT " + value + " FROM adminClass.STOCK WHERE stock_desc = '" + search + "';";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandTimeout = 60;
+                cmd.CommandText = query;
+
+                conn.Open();
+                returnInteger = (decimal)cmd.ExecuteScalar();
+
+            }
+            catch
+            {
+                MessageBox.Show("Error when executing StockCostPrice query");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return returnInteger;
         }
     }
 }

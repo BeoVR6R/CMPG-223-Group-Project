@@ -64,7 +64,7 @@ namespace GrindGo
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Customer with email address: " + search + "\n Will be deleted, are you sure?", "ALERT", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Customer with email address: " + search + "\nWill be deleted, are you sure?", "ALERT", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     try
