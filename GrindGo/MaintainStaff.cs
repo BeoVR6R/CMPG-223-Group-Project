@@ -120,7 +120,8 @@ namespace GrindGo
 
         private void btn_createStaff_Click(object sender, EventArgs e)
         {
-
+            AddStaff form_addStaff = new AddStaff();
+            form_addStaff.Show();
         }
     }
 }
