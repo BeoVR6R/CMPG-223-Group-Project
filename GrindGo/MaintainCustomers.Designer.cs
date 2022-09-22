@@ -131,7 +131,7 @@
             // 
             // btn_createCustomer
             // 
-            this.btn_createCustomer.Location = new System.Drawing.Point(596, 384);
+            this.btn_createCustomer.Location = new System.Drawing.Point(565, 384);
             this.btn_createCustomer.Name = "btn_createCustomer";
             this.btn_createCustomer.Size = new System.Drawing.Size(192, 54);
             this.btn_createCustomer.TabIndex = 8;
@@ -141,7 +141,7 @@
             // 
             // btn_advancedSearch
             // 
-            this.btn_advancedSearch.Location = new System.Drawing.Point(596, 324);
+            this.btn_advancedSearch.Location = new System.Drawing.Point(565, 324);
             this.btn_advancedSearch.Name = "btn_advancedSearch";
             this.btn_advancedSearch.Size = new System.Drawing.Size(192, 54);
             this.btn_advancedSearch.TabIndex = 9;
@@ -150,7 +150,7 @@
             // 
             // btn_refreshTable
             // 
-            this.btn_refreshTable.Location = new System.Drawing.Point(605, 63);
+            this.btn_refreshTable.Location = new System.Drawing.Point(565, 63);
             this.btn_refreshTable.Name = "btn_refreshTable";
             this.btn_refreshTable.Size = new System.Drawing.Size(192, 54);
             this.btn_refreshTable.TabIndex = 10;
@@ -238,7 +238,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(764, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_refreshTable);
             this.Controls.Add(this.btn_advancedSearch);

@@ -40,15 +40,15 @@
             this.btn_advancedSearch_stock = new System.Windows.Forms.Button();
             this.btn_refreshTable_Stock = new System.Windows.Forms.Button();
             this.dataGridViewStock = new System.Windows.Forms.DataGridView();
-            this.grindGoStock = new GrindGo.GrindGoStock();
-            this.sTOCKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sTOCKTableAdapter = new GrindGo.GrindGoStockTableAdapters.STOCKTableAdapter();
             this.stockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockdescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockcostPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTOCKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.grindGoStock = new GrindGo.GrindGoStock();
+            this.sTOCKTableAdapter = new GrindGo.GrindGoStockTableAdapters.STOCKTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grindGoStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTOCKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grindGoStock)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_searchStock
@@ -118,7 +118,7 @@
             // 
             // btn_createStock
             // 
-            this.btn_createStock.Location = new System.Drawing.Point(596, 384);
+            this.btn_createStock.Location = new System.Drawing.Point(365, 384);
             this.btn_createStock.Name = "btn_createStock";
             this.btn_createStock.Size = new System.Drawing.Size(192, 54);
             this.btn_createStock.TabIndex = 11;
@@ -128,7 +128,7 @@
             // 
             // btn_advancedSearch_stock
             // 
-            this.btn_advancedSearch_stock.Location = new System.Drawing.Point(596, 324);
+            this.btn_advancedSearch_stock.Location = new System.Drawing.Point(365, 324);
             this.btn_advancedSearch_stock.Name = "btn_advancedSearch_stock";
             this.btn_advancedSearch_stock.Size = new System.Drawing.Size(192, 54);
             this.btn_advancedSearch_stock.TabIndex = 12;
@@ -137,7 +137,7 @@
             // 
             // btn_refreshTable_Stock
             // 
-            this.btn_refreshTable_Stock.Location = new System.Drawing.Point(596, 60);
+            this.btn_refreshTable_Stock.Location = new System.Drawing.Point(365, 60);
             this.btn_refreshTable_Stock.Name = "btn_refreshTable_Stock";
             this.btn_refreshTable_Stock.Size = new System.Drawing.Size(192, 54);
             this.btn_refreshTable_Stock.TabIndex = 13;
@@ -156,22 +156,8 @@
             this.dataGridViewStock.DataSource = this.sTOCKBindingSource;
             this.dataGridViewStock.Location = new System.Drawing.Point(12, 60);
             this.dataGridViewStock.Name = "dataGridViewStock";
-            this.dataGridViewStock.Size = new System.Drawing.Size(578, 222);
+            this.dataGridViewStock.Size = new System.Drawing.Size(347, 222);
             this.dataGridViewStock.TabIndex = 14;
-            // 
-            // grindGoStock
-            // 
-            this.grindGoStock.DataSetName = "GrindGoStock";
-            this.grindGoStock.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sTOCKBindingSource
-            // 
-            this.sTOCKBindingSource.DataMember = "STOCK";
-            this.sTOCKBindingSource.DataSource = this.grindGoStock;
-            // 
-            // sTOCKTableAdapter
-            // 
-            this.sTOCKTableAdapter.ClearBeforeFill = true;
             // 
             // stockIDDataGridViewTextBoxColumn
             // 
@@ -192,12 +178,26 @@
             this.stockcostPriceDataGridViewTextBoxColumn.HeaderText = "stock_costPrice";
             this.stockcostPriceDataGridViewTextBoxColumn.Name = "stockcostPriceDataGridViewTextBoxColumn";
             // 
+            // sTOCKBindingSource
+            // 
+            this.sTOCKBindingSource.DataMember = "STOCK";
+            this.sTOCKBindingSource.DataSource = this.grindGoStock;
+            // 
+            // grindGoStock
+            // 
+            this.grindGoStock.DataSetName = "GrindGoStock";
+            this.grindGoStock.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sTOCKTableAdapter
+            // 
+            this.sTOCKTableAdapter.ClearBeforeFill = true;
+            // 
             // MaintainStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(562, 450);
             this.Controls.Add(this.dataGridViewStock);
             this.Controls.Add(this.btn_refreshTable_Stock);
             this.Controls.Add(this.btn_advancedSearch_stock);
@@ -213,8 +213,8 @@
             this.Text = "MaintainStock";
             this.Load += new System.EventHandler(this.MaintainStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grindGoStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTOCKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grindGoStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
