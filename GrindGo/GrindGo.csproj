@@ -126,6 +126,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GrindGoDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GrindGoDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrindGoDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GrindGoDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrindGoDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GrindGoStock.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,6 +253,28 @@
     </None>
     <None Include="GrindGoDataSet3.xss">
       <DependentUpon>GrindGoDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="GrindGoDataSet4.xsc">
+      <DependentUpon>GrindGoDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="GrindGoDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GrindGoDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GrindGoDataSet4.xss">
+      <DependentUpon>GrindGoDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="GrindGoDataSet5.xsc">
+      <DependentUpon>GrindGoDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="GrindGoDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GrindGoDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GrindGoDataSet5.xss">
+      <DependentUpon>GrindGoDataSet5.xsd</DependentUpon>
     </None>
     <None Include="GrindGoStock.xsc">
       <DependentUpon>GrindGoStock.xsd</DependentUpon>
