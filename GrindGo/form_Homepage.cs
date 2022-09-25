@@ -20,9 +20,6 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        AdminLogin formAdminLogin = new AdminLogin();
-        form_LoginPage formLogin = new form_LoginPage();
-
         SqlConnection conn = new SqlConnection(form_LoginPage.path);
 
         int counterHouseBlend = 0;
@@ -55,11 +52,13 @@ namespace GrindGo
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+            form_LoginPage formLogin = new form_LoginPage();
             formLogin.Show();
         }
 
         private void btn_adminPanel_Click(object sender, EventArgs e)
         {
+            AdminLogin formAdminLogin = new AdminLogin();
             formAdminLogin.Show();
         }
 

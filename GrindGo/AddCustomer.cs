@@ -18,9 +18,6 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        form_Homepage formHomePage = new form_Homepage();
-        form_LoginPage formLogin = new form_LoginPage();
-
         SqlConnection conn = new SqlConnection(form_LoginPage.path);
         int currentCustomerID;
 
@@ -87,6 +84,7 @@ namespace GrindGo
 
                     GetCustomerID(emailAddress);
 
+                    form_Homepage formHomePage = new form_Homepage();
                     formHomePage.Show();
                     formHomePage.LoadCustomerInfo(currentCustomerID, emailAddress);
                 }
@@ -103,6 +101,7 @@ namespace GrindGo
 
         private void btn_add_c_return_Click(object sender, EventArgs e)
         {
+            form_LoginPage formLogin = new form_LoginPage();
             formLogin.Show();
             this.Close();
         }
