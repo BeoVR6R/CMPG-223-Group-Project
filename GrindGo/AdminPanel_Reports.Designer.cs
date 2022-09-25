@@ -84,7 +84,7 @@
             // 
             // btn_refreshTable
             // 
-            this.btn_refreshTable.Location = new System.Drawing.Point(666, 248);
+            this.btn_refreshTable.Location = new System.Drawing.Point(666, 88);
             this.btn_refreshTable.Name = "btn_refreshTable";
             this.btn_refreshTable.Size = new System.Drawing.Size(192, 54);
             this.btn_refreshTable.TabIndex = 11;
@@ -106,7 +106,7 @@
             // chkBx_order_Date
             // 
             this.chkBx_order_Date.AutoSize = true;
-            this.chkBx_order_Date.Location = new System.Drawing.Point(148, 12);
+            this.chkBx_order_Date.Location = new System.Drawing.Point(505, 13);
             this.chkBx_order_Date.Name = "chkBx_order_Date";
             this.chkBx_order_Date.Size = new System.Drawing.Size(97, 17);
             this.chkBx_order_Date.TabIndex = 14;
@@ -117,7 +117,7 @@
             // chkBx_order_count
             // 
             this.chkBx_order_count.AutoSize = true;
-            this.chkBx_order_count.Location = new System.Drawing.Point(148, 35);
+            this.chkBx_order_count.Location = new System.Drawing.Point(505, 36);
             this.chkBx_order_count.Name = "chkBx_order_count";
             this.chkBx_order_count.Size = new System.Drawing.Size(128, 17);
             this.chkBx_order_count.TabIndex = 15;
@@ -128,7 +128,7 @@
             // order_include_c_details
             // 
             this.order_include_c_details.AutoSize = true;
-            this.order_include_c_details.Location = new System.Drawing.Point(285, 37);
+            this.order_include_c_details.Location = new System.Drawing.Point(76, 58);
             this.order_include_c_details.Name = "order_include_c_details";
             this.order_include_c_details.Size = new System.Drawing.Size(143, 17);
             this.order_include_c_details.TabIndex = 16;
@@ -139,16 +139,17 @@
             // chkBx_order_staffDetails
             // 
             this.chkBx_order_staffDetails.AutoSize = true;
-            this.chkBx_order_staffDetails.Location = new System.Drawing.Point(285, 13);
+            this.chkBx_order_staffDetails.Location = new System.Drawing.Point(76, 35);
             this.chkBx_order_staffDetails.Name = "chkBx_order_staffDetails";
             this.chkBx_order_staffDetails.Size = new System.Drawing.Size(121, 17);
             this.chkBx_order_staffDetails.TabIndex = 17;
             this.chkBx_order_staffDetails.Text = "Include Staff Details";
             this.chkBx_order_staffDetails.UseVisualStyleBackColor = true;
+            this.chkBx_order_staffDetails.CheckedChanged += new System.EventHandler(this.chkBx_order_staffDetails_CheckedChanged);
             // 
             // btn_need_help
             // 
-            this.btn_need_help.Location = new System.Drawing.Point(666, 188);
+            this.btn_need_help.Location = new System.Drawing.Point(666, 12);
             this.btn_need_help.Name = "btn_need_help";
             this.btn_need_help.Size = new System.Drawing.Size(192, 54);
             this.btn_need_help.TabIndex = 18;
@@ -157,14 +158,14 @@
             // 
             // txtBx_SearchID
             // 
-            this.txtBx_SearchID.Location = new System.Drawing.Point(15, 60);
+            this.txtBx_SearchID.Location = new System.Drawing.Point(76, 88);
             this.txtBx_SearchID.Name = "txtBx_SearchID";
             this.txtBx_SearchID.Size = new System.Drawing.Size(55, 20);
             this.txtBx_SearchID.TabIndex = 19;
             // 
             // btn_order_search
             // 
-            this.btn_order_search.Location = new System.Drawing.Point(76, 60);
+            this.btn_order_search.Location = new System.Drawing.Point(137, 88);
             this.btn_order_search.Name = "btn_order_search";
             this.btn_order_search.Size = new System.Drawing.Size(118, 20);
             this.btn_order_search.TabIndex = 20;
@@ -174,7 +175,7 @@
             // 
             // btn_order_findID
             // 
-            this.btn_order_findID.Location = new System.Drawing.Point(200, 60);
+            this.btn_order_findID.Location = new System.Drawing.Point(261, 88);
             this.btn_order_findID.Name = "btn_order_findID";
             this.btn_order_findID.Size = new System.Drawing.Size(118, 20);
             this.btn_order_findID.TabIndex = 21;
@@ -184,7 +185,7 @@
             // lbl_datePicker
             // 
             this.lbl_datePicker.AutoSize = true;
-            this.lbl_datePicker.Location = new System.Drawing.Point(9, 107);
+            this.lbl_datePicker.Location = new System.Drawing.Point(9, 153);
             this.lbl_datePicker.Name = "lbl_datePicker";
             this.lbl_datePicker.Size = new System.Drawing.Size(77, 13);
             this.lbl_datePicker.TabIndex = 22;
@@ -192,21 +193,21 @@
             // 
             // dateTimePicker_from
             // 
-            this.dateTimePicker_from.Location = new System.Drawing.Point(92, 101);
+            this.dateTimePicker_from.Location = new System.Drawing.Point(89, 147);
             this.dateTimePicker_from.Name = "dateTimePicker_from";
             this.dateTimePicker_from.Size = new System.Drawing.Size(187, 20);
             this.dateTimePicker_from.TabIndex = 23;
             // 
             // dateTimePicker_to
             // 
-            this.dateTimePicker_to.Location = new System.Drawing.Point(285, 101);
+            this.dateTimePicker_to.Location = new System.Drawing.Point(282, 147);
             this.dateTimePicker_to.Name = "dateTimePicker_to";
             this.dateTimePicker_to.Size = new System.Drawing.Size(187, 20);
             this.dateTimePicker_to.TabIndex = 24;
             // 
             // btn_order_date_search
             // 
-            this.btn_order_date_search.Location = new System.Drawing.Point(478, 101);
+            this.btn_order_date_search.Location = new System.Drawing.Point(475, 149);
             this.btn_order_date_search.Name = "btn_order_date_search";
             this.btn_order_date_search.Size = new System.Drawing.Size(118, 20);
             this.btn_order_date_search.TabIndex = 25;
@@ -226,9 +227,9 @@
             this.staffIDDataGridViewTextBoxColumn,
             this.customerIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.oRDERSBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 152);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 188);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(648, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(836, 150);
             this.dataGridView1.TabIndex = 26;
             // 
             // orderIDDataGridViewTextBoxColumn
@@ -273,7 +274,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(860, 313);
+            this.ClientSize = new System.Drawing.Size(860, 349);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_order_date_search);
             this.Controls.Add(this.dateTimePicker_to);
