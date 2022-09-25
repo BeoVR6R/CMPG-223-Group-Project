@@ -18,7 +18,10 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=BEO-PC\SQLEXPRESS;Initial Catalog=GrindGo;Integrated Security=True");
+        AddStaff form_addStaff = new AddStaff();
+        AdminPanel formAdminPanel = new AdminPanel();
+
+        SqlConnection conn = new SqlConnection(form_LoginPage.path);
         string search = "";
 
         private void MaintainStaff_Load(object sender, EventArgs e)
@@ -31,7 +34,6 @@ namespace GrindGo
         private void btn_goBack_Staff_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminPanel formAdminPanel = new AdminPanel();
             formAdminPanel.Show();
         }
 
@@ -120,7 +122,6 @@ namespace GrindGo
 
         private void btn_createStaff_Click(object sender, EventArgs e)
         {
-            AddStaff form_addStaff = new AddStaff();
             form_addStaff.Show();
         }
     }

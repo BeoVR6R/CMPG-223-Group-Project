@@ -19,7 +19,7 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=BEO-PC\SQLEXPRESS;Initial Catalog=GrindGo;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(form_LoginPage.path);
         int customerId = 0; 
 
         private void btn_updateCustomer_Click(object sender, EventArgs e)

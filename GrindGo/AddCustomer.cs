@@ -18,7 +18,10 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=GrindGo;Data Source=BEO-PC\SQLEXPRESS");
+        form_Homepage formHomePage = new form_Homepage();
+        form_LoginPage formLogin = new form_LoginPage();
+
+        SqlConnection conn = new SqlConnection(form_LoginPage.path);
         int currentCustomerID;
 
         bool IsValidEmail(string email)
@@ -84,7 +87,6 @@ namespace GrindGo
 
                     GetCustomerID(emailAddress);
 
-                    form_Homepage formHomePage = new form_Homepage();
                     formHomePage.Show();
                     formHomePage.LoadCustomerInfo(currentCustomerID, emailAddress);
                 }
@@ -101,7 +103,6 @@ namespace GrindGo
 
         private void btn_add_c_return_Click(object sender, EventArgs e)
         {
-            form_LoginPage formLogin = new form_LoginPage();
             formLogin.Show();
             this.Close();
         }

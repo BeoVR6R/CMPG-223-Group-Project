@@ -22,7 +22,11 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=BEO-PC\SQLEXPRESS;Initial Catalog=GrindGo;Integrated Security=True");
+        AdminPanel formAdminPanel = new AdminPanel();
+        AddCustomer formaddCustomer = new AddCustomer();
+        EditCustomer formEditCustomer = new EditCustomer();
+
+        SqlConnection conn = new SqlConnection(form_LoginPage.path);
         string search = "";
 
         private void MaintainCustomers_Load(object sender, EventArgs e)
@@ -34,13 +38,11 @@ namespace GrindGo
         private void btn_goBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminPanel formAdminPanel = new AdminPanel();
             formAdminPanel.Show();
         }
 
         private void btn_createCustomer_Click(object sender, EventArgs e)
         {
-            AddCustomer formaddCustomer = new AddCustomer();
             formaddCustomer.Show();
         }
 
@@ -135,7 +137,6 @@ namespace GrindGo
             }
             else
             {
-                EditCustomer formEditCustomer = new EditCustomer();
                 formEditCustomer.Show();
 
                 string firstName = GetCustomerDetails("firstName");

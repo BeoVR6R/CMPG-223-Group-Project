@@ -20,7 +20,11 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=BEO-PC\SQLEXPRESS;Initial Catalog=GrindGo;Integrated Security=True");
+        AdminLogin formAdminLogin = new AdminLogin();
+        form_LoginPage formLogin = new form_LoginPage();
+
+        SqlConnection conn = new SqlConnection(form_LoginPage.path);
+
         int counterHouseBlend = 0;
         int counterCappuccino = 0;
         int counterFanta = 0;
@@ -50,14 +54,12 @@ namespace GrindGo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            form_LoginPage formLogin = new form_LoginPage();
             this.Hide();
             formLogin.Show();
         }
 
         private void btn_adminPanel_Click(object sender, EventArgs e)
         {
-            AdminLogin formAdminLogin = new AdminLogin();
             formAdminLogin.Show();
         }
 

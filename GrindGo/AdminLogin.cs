@@ -17,6 +17,8 @@ namespace GrindGo
             InitializeComponent();
         }
 
+        AdminPanel formAdminPanel = new AdminPanel();
+
         string masterPassword = "1234";
         int counter = 0;
 
@@ -35,7 +37,6 @@ namespace GrindGo
             if (enteredPassword == masterPassword)
             {
                 this.Close();
-                AdminPanel formAdminPanel = new AdminPanel();
                 formAdminPanel.Show();
             }
 

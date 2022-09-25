@@ -19,7 +19,13 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=BEO-PC\SQLEXPRESS;Initial Catalog=GrindGo;Integrated Security=True");
+        AddCustomer formAddCustomer = new AddCustomer();
+        form_Homepage formHome = new form_Homepage();
+
+        // UNIVERSAL SETTING FOR DB CONNECTION STRING
+        public static string path = "Data Source=BEO-PC\\SQLEXPRESS;Initial Catalog=GrindGo;Integrated Security=True";
+        
+        SqlConnection conn = new SqlConnection(path);
         int customerId = 0;
         string emailAddress;
         string password;
@@ -39,7 +45,6 @@ namespace GrindGo
 
         private void btn_DevLogin_Click(object sender, EventArgs e)
         {
-            form_Homepage formHome = new form_Homepage();
             formHome.Show();
             this.Hide();
         }
@@ -136,7 +141,6 @@ namespace GrindGo
                            "Welcome, " + firstName);
                         loginStatus = true;
 
-                        form_Homepage formHome = new form_Homepage();
                         formHome.Show();
 
                         formHome.LoadCustomerInfo(customerId, emailAddress);
@@ -145,7 +149,7 @@ namespace GrindGo
                     }
                     else if (this.password != password)
                     {
-                        MessageBox.Show("Incorrect Password.1");
+                        MessageBox.Show("Incorrect Password.");
                     }
                 }
             }
@@ -213,7 +217,6 @@ namespace GrindGo
 
         private void btn_login_createAccount_Click(object sender, EventArgs e)
         {
-            AddCustomer formAddCustomer = new AddCustomer();
             formAddCustomer.Show();
             this.Hide();
         }

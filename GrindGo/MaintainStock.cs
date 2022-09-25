@@ -19,13 +19,17 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=BEO-PC\SQLEXPRESS;Initial Catalog=GrindGo;Integrated Security=True");
+        form_LoginPage formLoginPage = new form_LoginPage();
+        AddStock form_addStock = new AddStock();
+        AdminPanel formAdminPanel = new AdminPanel();
+        EditStock form_editStock = new EditStock();
+
+        SqlConnection conn = new SqlConnection(form_LoginPage.path);
         string search = "";
 
         private void btn_goBackStock_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminPanel formAdminPanel = new AdminPanel();
             formAdminPanel.Show();
         }
 
@@ -148,7 +152,6 @@ namespace GrindGo
 
         private void btn_createStock_Click(object sender, EventArgs e)
         {
-            AddStock form_addStock = new AddStock();
             form_addStock.Show();
         }
 
@@ -160,7 +163,6 @@ namespace GrindGo
             }
             else
             {
-                EditStock form_editStock = new EditStock();
                 form_editStock.Show();
 
                 int stockID = GetStockID("stock_ID");

@@ -11,5 +11,6 @@
 4. Create logical process model - DONE
 5. Convert logical to physical - DONE
 6. Create databse from physical data model - DONE
-7. Construct document to be submitted at the 18TH of Spetember
-8. Create windows forms app
+7. Construct document to be submitted at the 18TH of Spetember - DONE
+8. Create windows forms app - DONE
+ 

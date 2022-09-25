@@ -17,6 +17,11 @@ namespace GrindGo
             InitializeComponent();
         }
 
+        MaintainCustomers formMaintainCustomers = new MaintainCustomers();
+        AdminPanel_Reports form_admin_reports = new AdminPanel_Reports();
+        MaintainStock form_maintainStock = new MaintainStock();
+        MaintainStaff form_maintainStaff = new MaintainStaff();
+
         private void btn_Logout_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -25,14 +30,12 @@ namespace GrindGo
         private void btn_maintainCustomers_Click(object sender, EventArgs e)
         {
             this.Close();
-            MaintainCustomers formMaintainCustomers = new MaintainCustomers();
             formMaintainCustomers.Show();
         }
 
         private void btn_Reports_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminPanel_Reports form_admin_reports = new AdminPanel_Reports();
             form_admin_reports.Show();  
         }
 
@@ -43,7 +46,6 @@ namespace GrindGo
 
         private void btn_maintainConsumables_Click(object sender, EventArgs e)
         {
-            MaintainStock form_maintainStock = new MaintainStock();
             this.Close();
             form_maintainStock.Show();
         }
@@ -51,7 +53,6 @@ namespace GrindGo
         private void btn_maintainStaff_Click(object sender, EventArgs e)
         {
             this.Close();
-            MaintainStaff form_maintainStaff = new MaintainStaff();
             form_maintainStaff.Show();
         }
     }

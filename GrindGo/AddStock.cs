@@ -20,7 +20,7 @@ namespace GrindGo
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=GrindGo;Data Source=BEO-PC\SQLEXPRESS");
+        SqlConnection conn = new SqlConnection(form_LoginPage.path);
 
         private void AddStock_Load(object sender, EventArgs e)
         {
