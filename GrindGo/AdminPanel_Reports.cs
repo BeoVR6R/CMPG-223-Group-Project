@@ -273,7 +273,7 @@ namespace GrindGo
         private void GetStaffDetails()
         {
             string attribute = "staff_ID";
-            GetID(attribute);
+            GetStaffID(attribute);
 
             string firstName, lastName, username;
 
@@ -324,11 +324,7 @@ namespace GrindGo
                     reader.Read();
                     if (!reader.IsDBNull(0))
                     {
-                        if (q == "staff_ID")
-                        {
-                            staffID = reader.GetInt32(0);
-                        }
-                        else if(q == "customer_ID")
+                        if(q == "customer_ID")
                         {
                             customerID = reader.GetInt32(0);
                         }
@@ -342,6 +338,38 @@ namespace GrindGo
             catch
             {
                 MessageBox.Show("Error has occured when making a query. GETID");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void GetStaffID(string q)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("SELECT " + q + " FROM adminClass.ORDERS WHERE order_ID = " + search + ";", conn);
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    if (!reader.IsDBNull(0))
+                    {
+                        if (q == "staff_ID")
+                        {
+                            staffID = reader.GetInt32(0);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No linked records found.");
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("With Staff details selected.");
             }
             finally
             {
