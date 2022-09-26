@@ -24,8 +24,8 @@ namespace GrindGo
         SqlConnection conn = new SqlConnection(form_LoginPage.path);
 
         int search;
-        int customerID = 0;
-        int staffID = 0;
+        int customerID;
+        int staffID;
         int countOrders;
 
         private void AdminPanel_Reports_Load(object sender, EventArgs e)
